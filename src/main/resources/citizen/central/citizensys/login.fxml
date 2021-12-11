@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="citizen.central.citizensys.LoginController">
+<HBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="citizen.central.citizensys.UILogin">
    <children>
       <VBox>
          <children>
@@ -33,19 +33,19 @@
               </Label>
             <AnchorPane prefHeight="400.0" prefWidth="444.0" stylesheets="@css/main.css">
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="147.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="201.0" fitWidth="208.0" layoutX="136.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@img/logo.png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="173.0" layoutY="286.0" mnemonicParsing="false" onAction="#register" prefHeight="35.0" prefWidth="100.0" styleClass="btnOne" text="Register" />
+                  <Button layoutX="186.0" layoutY="287.0" mnemonicParsing="false" onAction="#register" prefHeight="35.0" prefWidth="100.0" styleClass="btnOne" text="Register" />
                </children>
             </AnchorPane>
          </children>
       </VBox>
       <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="505.0" styleClass="back" stylesheets="@css/main.css">
          <children>
-            <Label alignment="CENTER" prefHeight="40.0" prefWidth="458.0" styleClass="whitetitle" stylesheets="@css/main.css" text="Login" textAlignment="CENTER">
+            <Label alignment="CENTER" prefHeight="70.0" prefWidth="505.0" styleClass="whitetitle" stylesheets="@css/main.css" text="Login" textAlignment="CENTER">
                <font>
                   <Font size="18.0" />
                </font>
@@ -89,7 +89,7 @@
             </HBox>
             <AnchorPane prefHeight="139.0" prefWidth="483.0">
                <children>
-                  <Button layoutX="209.0" layoutY="58.0" mnemonicParsing="false" onAction="#login" prefHeight="35.0" prefWidth="100.0" styleClass="btnTwo" text="Login" />
+                  <Button layoutX="203.0" layoutY="52.0" mnemonicParsing="false" onAction="#login" prefHeight="35.0" prefWidth="100.0" styleClass="btnTwo" text="Login" />
                </children>
             </AnchorPane>
          </children>
