@@ -1,0 +1,61 @@
+.title{
+    -fx-text-fill: #01411C;
+    -fx-font-size: 32px;
+    -fx-font-family: Verdana;
+    -fx-font-smoothing-type: gray;
+
+}
+
+.whitetitle{
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 32px;
+    -fx-font-family: Verdana;
+    -fx-font-smoothing-type: gray;
+
+}
+
+.btnOne{
+    -fx-background-color:  #01411C;
+    -fx-background-radius: 0, 0;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: Verdana;
+}
+
+.btnOne:hover{
+     -fx-background-color:  #FFFFFF;
+        -fx-background-radius: 0, 0;
+        -fx-text-fill: #01411C;
+        -fx-font-family: Verdana;
+}
+
+.btnTwo{
+    -fx-background-color:  #FFFFFF;
+    -fx-background-radius: 0, 0;
+    -fx-text-fill: #01411C;
+    -fx-font-family: Verdana;
+}
+
+.btnTwo:hover{
+    -fx-background-color:  #01411C;
+    -fx-background-radius: 0, 0;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: Verdana;
+}
+
+.text-field {
+    -fx-background-color:  #FFFFFF;
+        -fx-background-radius: 0, 0;
+        -fx-text-fill: #01411C;
+        -fx-font-family: Verdana;
+}
+.text-field:focused {
+    -fx-background-color: #a9a9a9 , white , white;
+    -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;
+}
+
+.back{
+
+
+    -fx-background-color: #01411C;
+
+}
