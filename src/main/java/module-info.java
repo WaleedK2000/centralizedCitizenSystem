@@ -1,6 +1,7 @@
 module citizen.central.citizensys {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.sql;
 
 
     opens citizen.central.citizensys to javafx.fxml;
