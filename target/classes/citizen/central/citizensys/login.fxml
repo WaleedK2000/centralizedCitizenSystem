@@ -1,98 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
-<?import java.net.URL?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<HBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16"
+      fx:controller="citizen.central.citizensys.UILogin">
+    <children>
+        <VBox>
+            <children>
+                <Label alignment="CENTER" prefHeight="53.0" prefWidth="472.0" text="Centralized Citizen System"
+                       textAlignment="CENTER">
+                    <stylesheets>
+                        <URL value="@css/main.css"/>
 
-<HBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="citizen.central.citizensys.UILogin">
-   <children>
-      <VBox>
-         <children>
-            <Label alignment="CENTER" prefHeight="53.0" prefWidth="472.0" text="Centralized Citizen System" textAlignment="CENTER">
-               <stylesheets>
-                  <URL value="@css/main.css" />
+                    </stylesheets>
+                    <styleClass>
+                        <String fx:value="title"/>
 
-               </stylesheets>
-               <styleClass>
-                  <String fx:value="title" />
-
-               </styleClass>
-               <padding>
-                  <Insets top="30.0" />
-               </padding>
-              </Label>
-            <AnchorPane prefHeight="400.0" prefWidth="444.0" stylesheets="@css/main.css">
-               <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="147.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/logo.png" />
-                     </image>
-                  </ImageView>
-                  <Button layoutX="173.0" layoutY="286.0" mnemonicParsing="false" onAction="#register" prefHeight="35.0" prefWidth="100.0" styleClass="btnOne" text="Register" />
-               </children>
-            </AnchorPane>
-         </children>
-      </VBox>
-      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="505.0" styleClass="back" stylesheets="@css/main.css">
-         <children>
-            <Label alignment="CENTER" prefHeight="40.0" prefWidth="458.0" styleClass="whitetitle" stylesheets="@css/main.css" text="Login" textAlignment="CENTER">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <padding>
-                  <Insets top="30.0" />
-               </padding>
-            </Label>
-            <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="25.0">
-               <children>
-                  <Label maxWidth="180.0" prefWidth="180.0" styleClass="whitetitle" text="User ID">
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                  </Label>
-                  <TextField fx:id="userID" prefHeight="32.0" prefWidth="220.0" styleClass="text-field" />
-               </children>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <VBox.margin>
-                  <Insets left="25.0" top="65.0" />
-               </VBox.margin></HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="63.0" prefWidth="458.0" spacing="25.0">
-               <children>
-                  <Label maxWidth="180.0" prefWidth="180.0" styleClass="whitetitle" text="Password">
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                  </Label>
-                  <PasswordField fx:id="password" prefHeight="32.0" prefWidth="220.0" styleClass="text-field" />
-               </children>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <VBox.margin>
-                  <Insets left="25.0" />
-               </VBox.margin>
-               <padding>
-                  <Insets top="25.0" />
-               </padding>
-            </HBox>
-            <AnchorPane prefHeight="139.0" prefWidth="483.0">
-               <children>
-                  <Button layoutX="209.0" layoutY="58.0" mnemonicParsing="false" onAction="#login" prefHeight="35.0" prefWidth="100.0" styleClass="btnTwo" text="Login" />
-               </children>
-            </AnchorPane>
-         </children>
-      </VBox>
-   </children>
+                    </styleClass>
+                    <padding>
+                        <Insets top="30.0"/>
+                    </padding>
+                </Label>
+                <AnchorPane prefHeight="400.0" prefWidth="444.0" stylesheets="@css/main.css">
+                    <children>
+                        <ImageView fitHeight="201.0" fitWidth="208.0" layoutX="136.0" layoutY="53.0" pickOnBounds="true"
+                                   preserveRatio="true">
+                            <image>
+                                <Image url="@img/logo.png"/>
+                            </image>
+                        </ImageView>
+                        <Button layoutX="186.0" layoutY="287.0" mnemonicParsing="false" onAction="#register"
+                                prefHeight="35.0" prefWidth="100.0" styleClass="btnOne" text="Register"/>
+                    </children>
+                </AnchorPane>
+            </children>
+        </VBox>
+        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0"
+              prefWidth="505.0" styleClass="back" stylesheets="@css/main.css">
+            <children>
+                <Label alignment="CENTER" prefHeight="70.0" prefWidth="505.0" styleClass="whitetitle"
+                       stylesheets="@css/main.css" text="Login" textAlignment="CENTER">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                    <padding>
+                        <Insets top="30.0"/>
+                    </padding>
+                </Label>
+                <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="25.0">
+                    <children>
+                        <Label maxWidth="180.0" prefWidth="180.0" styleClass="whitetitle" text="User ID">
+                            <HBox.margin>
+                                <Insets/>
+                            </HBox.margin>
+                        </Label>
+                        <TextField fx:id="userID" prefHeight="32.0" prefWidth="220.0" styleClass="text-field"/>
+                    </children>
+                    <opaqueInsets>
+                        <Insets/>
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets left="25.0" top="65.0"/>
+                    </VBox.margin>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="63.0" prefWidth="458.0" spacing="25.0">
+                    <children>
+                        <Label maxWidth="180.0" prefWidth="180.0" styleClass="whitetitle" text="Password">
+                            <HBox.margin>
+                                <Insets/>
+                            </HBox.margin>
+                        </Label>
+                        <PasswordField fx:id="password" prefHeight="32.0" prefWidth="220.0" styleClass="text-field"/>
+                    </children>
+                    <opaqueInsets>
+                        <Insets/>
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets left="25.0"/>
+                    </VBox.margin>
+                    <padding>
+                        <Insets top="25.0"/>
+                    </padding>
+                </HBox>
+                <AnchorPane prefHeight="139.0" prefWidth="483.0">
+                    <children>
+                        <Button layoutX="203.0" layoutY="52.0" mnemonicParsing="false" onAction="#login"
+                                prefHeight="35.0" prefWidth="100.0" styleClass="btnTwo" text="Login"/>
+                    </children>
+                </AnchorPane>
+            </children>
+        </VBox>
+    </children>
 </HBox>

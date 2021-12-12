@@ -42,6 +42,15 @@
     -fx-font-family: Verdana;
 }
 
+.roundBtn{
+    -fx-background-radius: 5em;
+    -fx-min-width: 25px;
+    -fx-min-height: 25px;
+    -fx-max-width: 25px;
+    -fx-max-height: 25px;
+    -fx-background-color: #FFFFFF;
+}
+
 .text-field {
     -fx-background-color:  #FFFFFF;
         -fx-background-radius: 0, 0;
