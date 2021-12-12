@@ -1,4 +1,4 @@
-package citizen.central.citizensys;
+package citizen.central.citizensys.login;
 
 //citizen.central.citizensys.LoginController
 

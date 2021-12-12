@@ -14,6 +14,21 @@
 
 }
 
+.txtbtn{
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 25px;
+     -fx-font-family: Verdana;
+     -fx-font-smoothing-type: gray;
+}
+
+.txtbtn:hover{
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #01411C;
+    -fx-font-size: 25px;
+     -fx-font-family: Verdana;
+     -fx-font-smoothing-type: gray;
+}
+
 .btnOne{
     -fx-background-color:  #01411C;
     -fx-background-radius: 0, 0;

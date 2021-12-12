@@ -9,7 +9,7 @@
 <?import java.lang.String?>
 <?import java.net.URL?>
 <HBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16"
-      fx:controller="citizen.central.citizensys.UILogin">
+      fx:controller="citizen.central.citizensys.login.UILogin">
     <children>
         <VBox>
             <children>

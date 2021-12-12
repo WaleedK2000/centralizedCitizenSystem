@@ -22,8 +22,8 @@
 }
 
 .txtbtn:hover{
-    -fx-background-color: #FFFFFF;
-    -fx-text-fill: #01411C;
+
+    -fx-text-fill: #7BC950;
     -fx-font-size: 25px;
      -fx-font-family: Verdana;
      -fx-font-smoothing-type: gray;
