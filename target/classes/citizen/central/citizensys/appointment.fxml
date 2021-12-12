@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.layout.AnchorPane?>
-
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="citizen.central.citizensys.UIAppointment">
-   <children>
-      <DatePicker fx:id="date" layoutX="214.0" layoutY="136.0" onAction="#loadSlots" promptText="Select Appointment Date" />
-      <ChoiceBox fx:id="slot" layoutX="231.0" layoutY="200.0" prefHeight="25.0" prefWidth="139.0" />
-   </children>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16"
+            fx:controller="citizen.central.citizensys.UIAppointment">
+    <children>
+        <DatePicker fx:id="date" layoutX="214.0" layoutY="136.0" onAction="#loadSlots"
+                    promptText="Select Appointment Date"/>
+        <ChoiceBox fx:id="slot" layoutX="231.0" layoutY="200.0" prefHeight="25.0" prefWidth="139.0"/>
+    </children>
 </AnchorPane>

@@ -9,10 +9,7 @@ import javafx.scene.control.DatePicker;
 
 import java.sql.Date;
 import java.sql.SQLException;
-import java.sql.Time;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.ZoneId;
+
 
 public class UIAppointment {
 
@@ -31,14 +28,10 @@ public class UIAppointment {
         slot.setItems(ol);
 
         System.out.println("h");
-        for (String s : ol){
+        for (String s : ol) {
 
             System.out.println(s);
         }
-
-
-
-
 
 
     }

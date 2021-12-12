@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<HBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="citizen.central.citizensys.payment.UIPayment">
+    <children>
+        <VBox>
+            <children>
+                <Label alignment="CENTER" prefHeight="70.0" prefWidth="386.0" text="Payment" textAlignment="CENTER">
+                    <stylesheets>
+                        <URL value="@css/main.css" />
+
+                    </stylesheets>
+                    <styleClass>
+                        <String fx:value="title" />
+
+                    </styleClass>
+                    <padding>
+                        <Insets top="30.0" />
+                    </padding>
+                </Label>
+                <AnchorPane prefHeight="400.0" prefWidth="349.0" stylesheets="@css/main.css">
+                    <children>
+                  <FontIcon iconColor="#01411c" iconLiteral="ci-money" iconSize="100" layoutX="140.0" layoutY="193.0" selectionEnd="1" wrappingWidth="107.0" />
+                  <Label alignment="CENTER" layoutX="46.0" layoutY="269.0" prefHeight="40.0" prefWidth="94.0" styleClass="title" text="Total " textAlignment="CENTER">
+                     <stylesheets>
+                        <URL value="@css/main.css" />
+                     </stylesheets>
+                  </Label>
+                  <Label fx:id="total" alignment="CENTER" layoutX="171.0" layoutY="269.0" prefHeight="40.0" prefWidth="173.0" styleClass="title" text="1800 PKR">
+                     <stylesheets>
+                        <URL value="@css/main.css" />
+                     </stylesheets>
+                  </Label>
+                    </children>
+                </AnchorPane>
+            </children>
+        </VBox>
+        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="505.0" styleClass="back" stylesheets="@css/main.css">
+            <children>
+                <Label alignment="CENTER" prefHeight="70.0" prefWidth="505.0" styleClass="whitetitle" stylesheets="@css/main.css" text="Select Methord" textAlignment="CENTER">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <padding>
+                        <Insets top="30.0" />
+                    </padding>
+                </Label>
+                <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="25.0">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets left="25.0" top="65.0" />
+                    </VBox.margin>
+               <children>
+                  <FontIcon iconColor="WHITE" iconLiteral="bxl-mastercard" iconSize="50" selectionEnd="1" translateX="10.0" translateY="5.0" wrappingWidth="58.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </FontIcon>
+                  <Label styleClass="whitetitle" text="Mastercard" textFill="WHITE" />
+                  <Button mnemonicParsing="false" styleClass="roundBtn" translateY="-5.0" />
+               </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="63.0" prefWidth="458.0" spacing="25.0">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets left="25.0" />
+                    </VBox.margin>
+                    <padding>
+                        <Insets top="25.0" />
+                    </padding>
+               <children>
+                  <FontIcon iconColor="WHITE" iconLiteral="bxl-visa" iconSize="50" selectionEnd="1" translateX="10.0" translateY="5.0" wrappingWidth="58.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </FontIcon>
+                  <Label prefHeight="40.0" prefWidth="179.0" styleClass="whitetitle" text="Visa" textFill="WHITE" />
+                  <Button mnemonicParsing="false" styleClass="roundBtn" />
+               </children>
+                </HBox>
+                <AnchorPane prefHeight="139.0" prefWidth="483.0" />
+            </children>
+        </VBox>
+    </children>
+</HBox>
