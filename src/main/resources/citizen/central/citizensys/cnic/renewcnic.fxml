@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<HBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="citizen.central.citizensys.cnic.UINewcnic">
+    <children>
+        <VBox>
+            <children>
+                <Label alignment="CENTER" prefHeight="53.0" prefWidth="472.0" text="Centralized Citizen System" textAlignment="CENTER">
+                    <stylesheets>
+                        <URL value="@./css/main.css" />
+
+                    </stylesheets>
+                    <styleClass>
+                        <String fx:value="title" />
+
+                    </styleClass>
+                    <padding>
+                        <Insets top="30.0" />
+                    </padding>
+                </Label>
+                <AnchorPane prefHeight="400.0" prefWidth="444.0" stylesheets="@css/main.css">
+                    <children>
+                        <FontIcon layoutX="236.0" layoutY="149.0" />
+                        <FontIcon iconColor="#01411c" iconLiteral="bxs-id-card" iconSize="250" layoutX="111.0" layoutY="309.0" />
+                    </children>
+                </AnchorPane>
+            </children>
+        </VBox>
+        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="624.0" styleClass="back" stylesheets="@css/main.css">
+            <children>
+                <Label alignment="CENTER" prefHeight="70.0" prefWidth="505.0" styleClass="whitetitle" stylesheets="@css/main.css" text="Apply for New CNIC" textAlignment="CENTER">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <padding>
+                        <Insets top="30.0" />
+                    </padding>
+                </Label>
+                <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="25.0">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets left="25.0" top="65.0" />
+                    </VBox.margin>
+               <children>
+                  <FontIcon iconColor="WHITE" iconLiteral="ci-checkmark" iconSize="50" />
+                  <Label styleClass="whitetitle" text="Your Request is Valid" />
+               </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="63.0" prefWidth="200.0" spacing="25.0">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets left="25.0" />
+                    </VBox.margin>
+                    <padding>
+                        <Insets top="25.0" />
+                    </padding>
+               <children>
+                  <AnchorPane>
+                     <children>
+                        <FontIcon fx:id="iconOne" iconColor="WHITE" iconLiteral="ci-number-1" iconSize="50" layoutY="44.0" wrappingWidth="39.0" />
+                        <Label layoutX="64.0" layoutY="5.0" styleClass="whitetitle" />
+                        <Label fx:id="appointmentLabel" layoutX="64.0" layoutY="5.0" onMouseClicked="#appointment" prefHeight="40.0" prefWidth="341.0" styleClass="txtbtn" text="Select an appoinment date">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="63.0" prefWidth="458.0" spacing="25.0">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <padding>
+                        <Insets top="25.0" />
+                    </padding>
+                    <VBox.margin>
+                        <Insets left="25.0" />
+                    </VBox.margin>
+               <children>
+                  <FontIcon fx:id="iconTwo" iconColor="WHITE" iconLiteral="ci-number-2" iconSize="50" wrappingWidth="39.0" />
+                  <Label fx:id="payLabel" onMouseClicked="#payment" prefHeight="40.0" prefWidth="341.0" styleClass="txtbtn" text="Payment">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+                </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="63.0" prefWidth="458.0" spacing="25.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets top="25.0" />
+               </padding>
+               <children>
+                  <FontIcon fx:id="iconThree" iconColor="WHITE" iconLiteral="ci-number-3" iconSize="50" wrappingWidth="39.0">
+                     <HBox.margin>
+                        <Insets left="25.0" />
+                     </HBox.margin>
+                  </FontIcon>
+                  <Label fx:id="tokenLabel" onMouseClicked="#genToken" prefHeight="40.0" prefWidth="341.0" styleClass="txtbtn" text="Generate Token">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+            </HBox>
+                <AnchorPane prefHeight="117.0" prefWidth="616.0">
+                    <children>
+                        <Button layoutX="423.0" layoutY="28.0" mnemonicParsing="false" styleClass="btnTwo" text="Done" />
+                    </children>
+                </AnchorPane>
+            </children>
+        </VBox>
+    </children>
+</HBox>

@@ -13,7 +13,16 @@ module citizen.central.citizensys {
 
     opens citizen.central.citizensys to javafx.fxml;
     opens citizen.central.citizensys.payment to javafx.fxml;
+    opens citizen.central.citizensys.appointment to javafx.fxml;
+    opens citizen.central.citizensys.login to javafx.fxml;
+    opens citizen.central.citizensys.cnic to javafx.fxml;
+
     exports citizen.central.citizensys;
     exports citizen.central.citizensys.payment;
+    exports citizen.central.citizensys.login;
+    exports citizen.central.citizensys.appointment;
+    exports citizen.central.citizensys.cnic;
+
+
 
 }
