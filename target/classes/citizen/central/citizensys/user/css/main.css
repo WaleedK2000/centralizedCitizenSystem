@@ -37,6 +37,14 @@
      -fx-font-smoothing-type: gray;
 }
 
+.txt{
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 25px;
+     -fx-font-family: Verdana;
+     -fx-font-smoothing-type: gray;
+}
+
+
 .btnOne{
     -fx-background-color:  #01411C;
     -fx-background-radius: 0, 0;

@@ -83,16 +83,7 @@ public class UIcrc {
     @FXML
     void payment(MouseEvent event) throws IOException {
         payLabel.setDisable(true);
-        FXMLLoader loader = new FXMLLoader(UIPayment.getResource());
-        Parent root = loader.load();
-        UIPayment appointment = loader.getController();
-
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.setTitle("Payment");
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setResizable(false);
-        stage.showAndWait();
+        UIPayment.launchPayment();
         payLabel.setText("Payment Complete");
         iconTwo.setIconLiteral("ci-checkmark");
     }
