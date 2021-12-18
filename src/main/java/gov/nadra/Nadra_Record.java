@@ -32,7 +32,7 @@ public class Nadra_Record {
     @Column(name = "gender", nullable = false)
     private char gender;
 
-    public Nadra_Record(Long id, String cnic, String first_name, String last_name, String father_cnic, String mother_cnic, String date_Of_birth, char gender) {
+    public Nadra_Record(Long id, String cnic, String first_name, String last_name, String father_cnic, String mother_cnic, Date date_Of_birth, char gender) {
         this.id = id;
         this.cnic = cnic;
         this.first_name = first_name;
@@ -86,11 +86,11 @@ public class Nadra_Record {
         this.mother_cnic = mother_cnic;
     }
 
-    public String getDate_Of_birth() {
+    public Date getDate_Of_birth() {
         return date_Of_birth;
     }
 
-    public void setDate_Of_birth(String date_Of_birth) {
+    public void setDate_Of_birth(Date date_Of_birth) {
         this.date_Of_birth = date_Of_birth;
     }
 

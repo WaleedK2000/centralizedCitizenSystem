@@ -19,11 +19,12 @@ public class Citizen_Class_Test {
     @Test
     public void insertCitizen(){
         database.addCitizen(citizen);
-        Citizen ret = database.getCitizen("147", "password");
+        Citizen ret = database.getCitizen("147", "password").get(0);
         assertEquals(ret.getCnic(),"147");
         assertEquals(ret.getPassword(),"password");
 
     }
+    @Test
     public void doubleInsert(){
         assertEquals(database.addCitizen(citizen),false);
 
