@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import org.kordamp.ikonli.javafx.FontIcon;
 
 import java.io.IOException;
+import java.net.URL;
 
 public class UINewcnic {
 
@@ -35,6 +36,16 @@ public class UINewcnic {
     private Label tokenLabel;
 
     private int tok;
+
+    private String cnic;
+
+    public void setCnic(String cnic) {
+        this.cnic = cnic;
+    }
+
+    public static URL getResource() {
+        return UINewcnic.class.getResource("newcnic.fxml");
+    }
 
     @FXML
     void genToken(MouseEvent event) {

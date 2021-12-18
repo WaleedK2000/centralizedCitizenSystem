@@ -1,5 +1,6 @@
 package citizen.central.citizensys.appointment;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -30,6 +31,11 @@ public class UIAppointment {
     @FXML
     private ChoiceBox<String> slot;
 
+    public UIAppointment() {
+        ObservableList<String> list = FXCollections.observableArrayList();
+        list.add("Islamabad");
+    }
+
     public static URL getResource() {
         return UIAppointment.class.getResource("appointment.fxml");
     }
@@ -47,26 +53,27 @@ public class UIAppointment {
             System.out.println(s);
         }
 
-
     }
 
-    public String getDateTime(){
+    public String getDateTime() {
 
         String dateString = date.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         String time = slot.getValue();
 
-
         return dateString + " " + time;
     }
 
-    public void labelAppointment(String process){
+    public void labelAppointment(String process) {
         title.setText(process);
+
     }
 
     @FXML
     void confirm(ActionEvent event) {
-        Stage stage= (Stage) title.getScene().getWindow();
+        Stage stage = (Stage) title.getScene().getWindow();
+        System.out.println("Selected: " + getDateTime());
         stage.close();
     }
+
 
 }
