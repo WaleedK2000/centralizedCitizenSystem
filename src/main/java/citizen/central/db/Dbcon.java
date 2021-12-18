@@ -6,6 +6,10 @@ import java.sql.SQLException;
 
 public class Dbcon {
 
+    public static org.hibernate.cfg.Configuration getDbCon(){
+       return new org.hibernate.cfg.Configuration();
+    }
+
 
     public static Connection mySQLConnection() {
         try {
