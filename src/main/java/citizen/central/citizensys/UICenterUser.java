@@ -13,7 +13,7 @@ import java.io.IOException;
 
 public class UICenterUser {
 
-    private String cnic;
+    private String cnic = "147";
 
     @FXML
     void appointmentNewCnc(ActionEvent event) throws IOException {
@@ -22,6 +22,7 @@ public class UICenterUser {
 
         UINewcnic newcnic = loader.getController();
         newcnic.setCnic(cnic);
+        newcnic.newCnic(cnic);
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.initModality(Modality.APPLICATION_MODAL);
