@@ -19,6 +19,7 @@ module citizen.central.citizensys {
     opens citizen.central.citizensys.login to javafx.fxml;
     opens citizen.central.citizensys.cnic to javafx.fxml;
     opens citizen.central.citizensys.user to javafx.fxml;
+    opens gov.nadra to org.hibernate.orm.core;
 
 
     exports citizen.central.citizensys;
@@ -28,6 +29,7 @@ module citizen.central.citizensys {
     exports citizen.central.citizensys.appointment;
     exports citizen.central.citizensys.cnic;
     exports citizen.central.db;
+    exports gov.nadra;
 
 
 }
