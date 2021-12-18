@@ -22,9 +22,8 @@ public class Appointment {
         return slots;
     }
 
-    public int book_available_slot(DatePicker date, String slot){
-        int token_num = 11122;
-        return token_num;
+    public String book_available_slot(DatePicker date, String slot, String cnic) throws SQLException {
+        return Database.confirmAppointment(cnic,date.getValue(),slot);
     }
 
 }

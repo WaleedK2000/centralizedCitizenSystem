@@ -5,6 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.sql.*;
+import java.time.LocalDate;
 
 
 public class Database {
@@ -49,6 +50,18 @@ public class Database {
         ResultSet resultSet = statement.executeQuery();
         System.out.println(resultSet.getFetchSize() + "  size");
         return getAvailableSlots(resultSet);
+    }
+
+    public static String confirmAppointment(String cnic, LocalDate date, String time) throws SQLException {
+        String sql = "INSERT INTO appointment (counter_id, citizen, `date`, startTime, endTime) VALUES (2500, ?, ?, ? , '09:30' )";
+        Connection con = Dbcon.mySQLConnection();
+        PreparedStatement statement = con.prepareStatement(sql);
+        statement.setString(1,cnic);
+        statement.setDate(2, Date.valueOf(date));
+        statement.setString(3,time);
+
+        return cnic+"_23_"+time+date.toString();
+
     }
 
 }
