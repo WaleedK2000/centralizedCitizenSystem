@@ -33,8 +33,16 @@ CREATE TABLE appointment  (
     CONSTRAINT mustEndAfterStart CHECK (
         endTime > startTime
     )
-    
-    
 );
-    
+
+
+CREATE TABLE citizen (
+
+	cnic VARCHAR(10) NOT NULL,
+	firstName VARCHAR(255) NOT NULL,
+	lastName VARCHAR(255) NOT NULL,
+	dob DATE NOT NULL,
+	gender VARCHAR(1), NOT NULL
+
+);
 
