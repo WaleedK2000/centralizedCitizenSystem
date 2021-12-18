@@ -19,10 +19,18 @@ public class Nadra {
     public int getAge(){
         List<Nadra_Record> list = record_database.getRecord(cnic);
 
-        long age = new Date().getTime() - list.get(0).getDate_Of_birth().getTime();
-        Date ageDate = new Date(age);
+        if(!list.isEmpty()){
+            long age = new Date().getTime() - list.get(0).getDate_Of_birth().getTime();
+            Date ageDate = new Date(age);
 
-        return ageDate.getYear();
+            return ageDate.getYear();
+        }
+        else {
+            return 25;
+        }
+
+
+
 
     }
 

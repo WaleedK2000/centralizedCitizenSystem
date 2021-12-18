@@ -1,5 +1,6 @@
 package citizen.central.citizensys.appointment;
 
+import citizen.central.citizensys.Citizen_Controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -34,6 +35,16 @@ public class UIAppointment {
     public UIAppointment() {
         ObservableList<String> list = FXCollections.observableArrayList();
         list.add("Islamabad");
+    }
+
+    private Citizen_Controller citizen_controller;
+
+    public DatePicker getDate() {
+        return date;
+    }
+
+    public ChoiceBox<String> getSlot() {
+        return slot;
     }
 
     public static URL getResource() {

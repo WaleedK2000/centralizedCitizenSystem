@@ -1,5 +1,6 @@
 package citizen.central.citizensys.appointment;
 
+import citizen.central.citizensys.Citizen_Controller;
 import javafx.collections.ObservableList;
 import javafx.scene.control.DatePicker;
 
@@ -10,6 +11,10 @@ import java.sql.SQLException;
 public class Appointment {
 
     private ObservableList<String> slots;
+
+    private DatePicker date;
+    private String selectedSlot;
+    private String cnic;
 
 
     public void check_avaliable_slots(Date date) throws SQLException {
@@ -22,8 +27,16 @@ public class Appointment {
         return slots;
     }
 
-    public String book_available_slot(DatePicker date, String slot, String cnic) throws SQLException {
-        return Database.confirmAppointment(cnic,date.getValue(),slot);
+    public void book_available_slot(DatePicker date, String slot, String cnic) throws SQLException {
+
+        this.date = date;
+        this.selectedSlot = slot;
+        this.cnic = cnic;
+
+
     }
 
+    public String do_booking_confirmation() throws SQLException {
+        return Database.confirmAppointment(cnic,date.getValue(),selectedSlot);
+    }
 }

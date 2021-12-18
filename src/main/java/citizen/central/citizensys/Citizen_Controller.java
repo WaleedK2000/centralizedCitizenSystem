@@ -11,10 +11,13 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import java.sql.SQLException;
+
 public class Citizen_Controller {
 
 
     Appointment appointment;
+    String appointment_token;
 
    public int appointmentNewCNic(String cnic){
 
@@ -29,8 +32,6 @@ public class Citizen_Controller {
        else {
            return -1;
        }
-
-
    }
 
    public ObservableList<String> check_avaliable_slot(){
@@ -38,9 +39,9 @@ public class Citizen_Controller {
        return appointment.getSlots();
    }
 
-   public void book_slot(DatePicker date, String slot){
-       Appointment appointment = new Appointment();
-       appointment.book_available_slot(date,slot);
+   public void book_slot(DatePicker date, String slot, String cnic) throws SQLException {
+       appointment = new Appointment();
+       appointment.book_available_slot(date,slot,cnic);
        //appointment.bookSlot
    }
 
@@ -48,8 +49,13 @@ public class Citizen_Controller {
         Payment payment = new Payment(total,details);
    }
 
-   public int do_booking_confirmation(DatePicker date, String slot){
-        return appointment.book_available_slot(date, slot);
+   public String do_booking_confirmation() throws SQLException {
+        appointment_token =  appointment.do_booking_confirmation();
+        return appointment_token;
+   }
+
+   public String generateToken(){
+       return appointment_token;
    }
 
 
