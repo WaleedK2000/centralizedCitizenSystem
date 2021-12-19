@@ -2,7 +2,6 @@ package citizen.central.citizensys.login;
 
 import citizen.central.citizensys.Citizen;
 import citizen.central.db.Dbcon;
-import gov.nadra.Nadra_Record;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -17,7 +16,7 @@ public class DBLogin {
     private final Session session;
     private final Transaction trans;
 
-    public DBLogin(){
+    public DBLogin() {
         con = Dbcon.getDbCon();
         con.configure().addAnnotatedClass(Citizen.class);
         sf = con.buildSessionFactory();
@@ -25,13 +24,13 @@ public class DBLogin {
         trans = session.beginTransaction();
     }
 
-    public boolean validate_credential(String cnic, String password, char type){
+    public boolean validate_credential(String cnic, String password, char type) {
 
-        if(type == 'u'){
+        if (type == 'u') {
             //user
             String query = "SELECT * FROM citizen WHERE cnic = " + cnic + " and password = " + password;
-            List<Citizen> list = session.createNativeQuery(query,Citizen.class).list();
-            if(list.isEmpty()){
+            List<Citizen> list = session.createNativeQuery(query, Citizen.class).list();
+            if (list.isEmpty()) {
                 return false;
             }
             Citizen cit = list.get(0);
@@ -40,11 +39,28 @@ public class DBLogin {
         return false;
     }
 
-    public void addUser(String cnic, String password){
+    public boolean userExists(String cnic, char type) {
+        if (type == 'u') {
+            String query = "SELECT * FROM citizen WHERE cnic = " + cnic;
+            List<Citizen> list = session.createNativeQuery(query, Citizen.class).list();
 
-        Citizen user = new Citizen(cnic,password);
-        session.save(user);
-        trans.commit();
+            return !list.isEmpty();
+        }
+        return false;
+    }
+
+    public boolean addUser(String cnic, String password) {
+
+        if (!userExists(cnic, 'u')) {
+            Citizen user = new Citizen(cnic, password);
+            session.save(user);
+            trans.commit();
+            return true;
+        }
+
+        return false;
+
     }
 
 }
+
