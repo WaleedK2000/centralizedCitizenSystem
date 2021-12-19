@@ -29,16 +29,22 @@ public class DBLogin {
 
         if(type == 'u'){
             //user
-            String query = "SELECT * FORM citizen WHERE cnic = " + cnic + " and password = " + password;
+            String query = "SELECT * FROM citizen WHERE cnic = " + cnic + " and password = " + password;
             List<Citizen> list = session.createNativeQuery(query,Citizen.class).list();
             if(list.isEmpty()){
                 return false;
             }
             Citizen cit = list.get(0);
-
             return cit.validatePassword(password);
         }
+        return false;
+    }
 
+    public void addUser(String cnic, String password){
+
+        Citizen user = new Citizen(cnic,password);
+        session.save(user);
+        trans.commit();
     }
 
 }
