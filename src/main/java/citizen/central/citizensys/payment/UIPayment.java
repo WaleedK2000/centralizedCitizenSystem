@@ -1,5 +1,6 @@
 package citizen.central.citizensys.payment;
 
+import citizen.central.citizensys.Citizen_Controller;
 import citizen.central.citizensys.appointment.UIAppointment;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -7,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -18,7 +20,9 @@ public class UIPayment {
     private Label total;
 
     @FXML
-    private Label cardnum;
+    private TextField cardnum;
+
+    private Citizen_Controller citizen_controller;
 
     public String getCardDet(){
         return cardnum.toString();
@@ -38,9 +42,16 @@ public class UIPayment {
 
     }
 
+    public void setCitizen_controller(Citizen_Controller citizen_controller) {
+        this.citizen_controller = citizen_controller;
+    }
+
     @FXML
     void payment(ActionEvent event) {
+        citizen_controller = new Citizen_Controller();
+        citizen_controller.do_payment(1800, cardnum.getText());
         Stage stage= (Stage) total.getScene().getWindow();
+
         stage.close();
     }
 
@@ -56,5 +67,9 @@ public class UIPayment {
         stage.setResizable(false);
         stage.showAndWait();
     }
+
+
+
+
 
 }

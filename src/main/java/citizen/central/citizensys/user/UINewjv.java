@@ -131,7 +131,7 @@ public class UINewjv implements Initializable {
 
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
-        stage.setTitle("RENEW");
+        stage.setTitle("New JV");
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.showAndWait();
     }

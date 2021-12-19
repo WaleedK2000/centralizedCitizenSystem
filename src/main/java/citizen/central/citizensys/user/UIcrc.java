@@ -1,6 +1,7 @@
 package citizen.central.citizensys.user;
 
 import citizen.central.citizensys.Citizen_Controller;
+import citizen.central.citizensys.appointment.Appointment;
 import citizen.central.citizensys.appointment.UIAppointment;
 import citizen.central.citizensys.payment.UIPayment;
 import javafx.event.ActionEvent;
@@ -65,6 +66,10 @@ public class UIcrc {
         Parent root = loader.load();
         UIAppointment appointment = loader.getController();
         appointment.labelAppointment("New CRC");
+        Appointment app = new Appointment();
+
+        citizen_controller.check_avaliable_slot();
+
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.setTitle("Appointment");
@@ -79,12 +84,7 @@ public class UIcrc {
         citizen_controller.book_slot(appointment.getDate(),appointment.getSlot().getValue(),cnic);
 
     }
-    /*
-    @FXML
-    void enterDat(MouseEvent event) throws IOException {
 
-    }
-    */
     @FXML
     void enterDat(MouseEvent event) {
 
@@ -103,7 +103,7 @@ public class UIcrc {
         UIPayment.launchPayment();
         payLabel.setText("Payment Complete");
         iconTwo.setIconLiteral("ci-checkmark");
-
+        citizen_controller.do_payment(1800,"CRC");
         citizen_controller.do_booking_confirmation();
 
     }
