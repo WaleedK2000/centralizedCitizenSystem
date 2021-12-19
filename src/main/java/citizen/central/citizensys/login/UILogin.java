@@ -2,6 +2,7 @@ package citizen.central.citizensys.login;
 
 //citizen.central.citizensys.LoginController
 
+import citizen.central.citizensys.Citizen_Controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
@@ -16,10 +17,14 @@ public class UILogin {
 
     @FXML
     public void login(ActionEvent event) {
+
+
         System.out.println("Login Button Pressed");
 
         System.out.println("Value in user id field = " + userID.getText());
         System.out.println("Pass = " + password.getText());
+
+
 
     }
 
