@@ -1,6 +1,6 @@
 package citizen.central.citizensys.cnic;
 
-import citizen.central.citizensys.Citizen_Controller;
+import citizen.central.citizensys.Citizen_info;
 import citizen.central.citizensys.payment.Payment;
 import citizen.central.citizensys.payment.UIPayment;
 import gov.nadra.Nadra_Record;
@@ -31,7 +31,7 @@ public class UIRenewcnic implements Initializable {
     @FXML
     private Label notifLabel;
 
-    private Citizen_Controller citizen_controller;
+    private Citizen_info citizen_info;
 
     private String cnic = "147";
 
@@ -41,9 +41,9 @@ public class UIRenewcnic implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        citizen_controller = new Citizen_Controller();
-        int valid = citizen_controller.renew_cnic(cnic);
-        record = citizen_controller.get_info();
+        citizen_info = new Citizen_info();
+        int valid = citizen_info.renew_cnic(cnic);
+        record = citizen_info.get_info();
 
         if(valid == -1){
             validMsg.setText("Cnic Not Valid. Please Visit Nearest NADRA Office");

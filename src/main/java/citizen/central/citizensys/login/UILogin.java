@@ -2,10 +2,7 @@ package citizen.central.citizensys.login;
 
 //citizen.central.citizensys.LoginController
 
-import citizen.central.citizensys.Citizen;
-import citizen.central.citizensys.Citizen_Controller;
 import citizen.central.citizensys.HelloApplication;
-import citizen.central.citizensys.user.UIcrc;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
