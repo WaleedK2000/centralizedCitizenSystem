@@ -9,6 +9,7 @@
       <Button layoutX="167.0" layoutY="188.0" mnemonicParsing="false" onAction="#renew_cnic" prefHeight="25.0" prefWidth="267.0" text="Renew CNIC" />
       <Button layoutX="167.0" layoutY="276.0" mnemonicParsing="false" onAction="#appointmentNewCRC" prefHeight="25.0" prefWidth="267.0" text="Apply for new JV" />
       <Button layoutX="167.0" layoutY="236.0" mnemonicParsing="false" onAction="#appointmentNewJVCard" prefHeight="25.0" prefWidth="267.0" text="Apply for Child Registration Certificate" />
-      <Button layoutX="167.0" layoutY="335.0" mnemonicParsing="false" onAction="#apply_learner_permit" prefHeight="25.0" prefWidth="267.0" text="Apply for Learner Permit" />
+      <Button layoutX="167.0" layoutY="318.0" mnemonicParsing="false" onAction="#apply_learner_permit" prefHeight="25.0" prefWidth="267.0" text="Apply for Learner Permit" />
+      <Button layoutX="167.0" layoutY="361.0" mnemonicParsing="false" onAction="#renew_driving_license" prefHeight="25.0" prefWidth="267.0" text="Renew Driving license" />
    </children>
 </AnchorPane>

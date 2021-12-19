@@ -9,4 +9,15 @@ public class TrafficPolice {
 
     }
 
+    public boolean sendRequest(String type, String cnic)  {
+
+        try {
+            wait(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return true;
+    }
+
 }

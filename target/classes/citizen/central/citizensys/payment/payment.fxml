@@ -64,7 +64,7 @@
                         <Insets left="25.0" top="65.0" />
                     </VBox.margin>
                <children>
-                  <TextField fx:id="card" prefHeight="35.0" prefWidth="267.0" promptText="Card Number" styleClass="btnTwo">
+                  <TextField fx:id="cardnum" prefHeight="35.0" prefWidth="267.0" promptText="Card Number" styleClass="btnTwo">
                      <HBox.margin>
                         <Insets left="33.0" />
                      </HBox.margin>

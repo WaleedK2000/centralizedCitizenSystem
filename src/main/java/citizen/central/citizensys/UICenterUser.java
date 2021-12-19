@@ -4,6 +4,7 @@ import citizen.central.citizensys.cnic.UINewcnic;
 import citizen.central.citizensys.cnic.UIRenewcnic;
 import citizen.central.citizensys.user.UILearnerPermit;
 import citizen.central.citizensys.user.UINewjv;
+import citizen.central.citizensys.user.UIRenewDrivingLicense;
 import citizen.central.citizensys.user.UIcrc;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -58,6 +59,15 @@ public class UICenterUser {
     @FXML
     void apply_learner_permit() throws IOException {
         UILearnerPermit.launch(citizen_controller);
+    }
+
+    @FXML
+    void renew_driving_license(ActionEvent event) {
+        try {
+            UIRenewDrivingLicense.launch();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }
