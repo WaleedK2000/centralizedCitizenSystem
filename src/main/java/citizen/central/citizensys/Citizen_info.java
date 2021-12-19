@@ -81,8 +81,10 @@ public class Citizen_info {
    public int appointmentNewCNic(String cnic){
         nadra = new Nadra(cnic);
 
-       if (nadra.checkValidCnic() ){
-           if (nadra.getAge() >= 18){
+       if (nadra.checkValidCnic() )
+       {
+           if (nadra.getAge() >= 18)
+           {
                 return 0;
            }
            return -2;
@@ -95,8 +97,10 @@ public class Citizen_info {
    public int appointmentNewJVCard(String cnic){
         nadra = new Nadra(cnic);
 
-        if(nadra.checkValidCnic()){
-            if(nadra.getAge() < 18){
+        if(nadra.checkValidCnic())
+        {
+            if(nadra.getAge() < 18)
+            {
                 return 0;
             }
             return -2;

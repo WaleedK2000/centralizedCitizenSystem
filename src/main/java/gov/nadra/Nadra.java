@@ -62,7 +62,9 @@ public class Nadra {
         return true;
     }
 
-
+public void issue_nic(String cnic)
+{
+}
 
 
 

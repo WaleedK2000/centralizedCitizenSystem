@@ -1,17 +1,15 @@
-package gov.nadra;
+package gov.UnionCouncil;
 
-import citizen.central.citizensys.Citizen;
 import citizen.central.db.Dbcon;
+import gov.UnionCouncil.UC_Record;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
-public class DBNadra {
+public class DBUnionCouncil {
 
     private final Configuration con;
     private final SessionFactory sf;
@@ -19,17 +17,17 @@ public class DBNadra {
     private final Transaction trans;
 
 
-    public DBNadra(){
+    public DBUnionCouncil(){
         con = Dbcon.getDbCon();
-        con.configure().addAnnotatedClass(Nadra_Record.class);
+        con.configure().addAnnotatedClass(UC_Record.class);
         sf = con.buildSessionFactory();
         session = sf.openSession();
         trans = session.beginTransaction();
     }
 
-    public boolean addRecord(Nadra_Record record){
+    public boolean addRecord(UC_Record record){
 
-        if(exists(record.getCnic())){
+        if(exists(record.getBcertificate_No())){
             System.out.println("Already Exists");
             return false;
         }
@@ -41,22 +39,20 @@ public class DBNadra {
 
     }
 
-    public boolean exists(String cnic){
-        List<Nadra_Record> list = getRecord(cnic);
+    public boolean exists(String bcertertificate_no){
+        List<UC_Record> list = getRecord(bcertertificate_no);
         return !list.isEmpty();
     }
 
-    public List<Nadra_Record> getRecord(String cnic){
-        String query = "SELECT * FROM nadra WHERE cnic = " + cnic;
+    public List<UC_Record> getRecord(String bcertertificate_no){
+        String query = "SELECT * FROM union_council  WHERE cnic = " + bcertertificate_no;
 
 
 
-        return session.createNativeQuery(query,Nadra_Record.class).list();
+        return session.createNativeQuery(query,UC_Record.class).list();
     }
 
 
 
-    public Date getCnicExpiry(String cnic) {
-        return new Date(2019, Calendar.SEPTEMBER,2021);
-    }
+
 }
