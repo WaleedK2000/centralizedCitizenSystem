@@ -14,7 +14,7 @@ public class UICRC_1 {
     private String tok;
 
     public static URL getResource() {
-        return HelloApplication.class.getResource("crc_1.fxml");
+        return UICRC_1.class.getResource("crc_1.fxml");
     }
 
     @FXML

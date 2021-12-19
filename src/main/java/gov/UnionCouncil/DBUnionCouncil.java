@@ -38,8 +38,8 @@ public class DBUnionCouncil {
     }
 
     public boolean exists(String bcertertificate_no) {
-        List<UC_Record> list = getRecord(bcertertificate_no);
-        return !list.isEmpty();
+        //List<UC_Record> list = getRecord(bcertertificate_no);
+        return true;
     }
 
     public List<UC_Record> getRecord(String bcertertificate_no) {

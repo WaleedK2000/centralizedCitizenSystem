@@ -2,6 +2,7 @@ package citizen.central.citizensys;
 
 import citizen.central.citizensys.cnic.UINewcnic;
 import citizen.central.citizensys.cnic.UIRenewcnic;
+import citizen.central.citizensys.emp.UIEmployeeCenter;
 import citizen.central.citizensys.login.UILogin;
 import citizen.central.citizensys.user.UILearnerPermit;
 import citizen.central.citizensys.user.UINewjv;
@@ -27,6 +28,11 @@ public class UICenterUser implements Initializable {
 
     public UICenterUser() {
         citizen_info = new Citizen_info();
+    }
+
+    public static URL getResource() {
+        return UICenterUser.class.getResource("center_user.fxml");
+
     }
 
     @FXML

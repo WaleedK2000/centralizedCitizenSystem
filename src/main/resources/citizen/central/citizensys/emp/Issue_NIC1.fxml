@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox prefHeight="472.0" prefWidth="977.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<HBox prefHeight="472.0" prefWidth="977.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <VBox prefHeight="472.0" prefWidth="472.0" styleClass="whitetitle" stylesheets="@css/main.css">
             <children>
@@ -31,7 +31,7 @@
                                 <Image url="@img/logo.png" />
                             </image>
                         </ImageView>
-                        <Label alignment="CENTER" layoutX="-17.0" layoutY="258.0" prefHeight="69.0" prefWidth="506.0" stylesheets="@css/main.css" text="Issue CRC" textFill="#104a0d">
+                        <Label alignment="CENTER" layoutX="-17.0" layoutY="258.0" prefHeight="69.0" prefWidth="506.0" stylesheets="@css/main.css" text="Issue National Identity Card" textFill="#104a0d">
                             <font>
                                 <Font size="33.0" />
                             </font>
@@ -51,6 +51,11 @@
                     <children>
                         <Button layoutX="165.0" layoutY="317.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="145.0" styleClass="simplebtnTwo" text="Proceed" />
                         <TextField layoutX="110.0" layoutY="243.0" prefHeight="34.0" prefWidth="269.0" />
+                        <Label layoutX="55.0" layoutY="176.0" prefHeight="40.0" prefWidth="399.0" styleClass="whitetitle" text="Appointment Token ID">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
                     </children>
                 </AnchorPane>
             </children>

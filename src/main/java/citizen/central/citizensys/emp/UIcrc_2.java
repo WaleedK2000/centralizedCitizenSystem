@@ -1,6 +1,7 @@
 package citizen.central.citizensys.emp;
 
 import citizen.central.citizensys.HelloApplication;
+import citizen.central.citizensys.user.UIcrcdat;
 import gov.UnionCouncil.DBUnionCouncil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -34,7 +35,8 @@ public class UIcrc_2 {
 
         DBUnionCouncil dbUnionCouncil = new DBUnionCouncil();
 
-        if(dbUnionCouncil.exists(cert_num.toString())){
+
+        if(dbUnionCouncil.exists(cert.getText())){
             guardian_cnic = cnic.getText();
             cert_num = cert.getText();
             closeWindow();
@@ -48,7 +50,7 @@ public class UIcrc_2 {
     }
 
     public static URL getResource() {
-        return HelloApplication.class.getResource("crc_2.fxml");
+        return UIcrc_2.class.getResource("crc_2.fxml");
     }
 
 

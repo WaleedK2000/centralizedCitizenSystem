@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox prefHeight="472.0" prefWidth="977.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<HBox prefHeight="472.0" prefWidth="977.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="citizen.central.citizensys.emp.UIPass">
     <children>
         <VBox prefHeight="472.0" prefWidth="472.0" styleClass="whitetitle" stylesheets="@css/main.css">
             <children>
@@ -48,21 +48,21 @@
         </VBox>
         <VBox prefHeight="472.0" prefWidth="506.0" stylesheets="@css/main.css">
             <children>
-                <AnchorPane prefHeight="479.0" prefWidth="488.0" styleClass="back" stylesheets="@css/main.css">
+                <AnchorPane fx:id="dob" prefHeight="479.0" prefWidth="488.0" styleClass="back" stylesheets="@css/main.css">
                     <children>
-                        <Button layoutX="182.0" layoutY="403.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="145.0" styleClass="simplebtnTwo" text="Issue Passport Token" />
+                        <Button layoutX="182.0" layoutY="403.0" mnemonicParsing="false" onAction="#issueTok" prefHeight="34.0" prefWidth="145.0" styleClass="simplebtnTwo" text="Issue Passport Token" />
                   <Label layoutX="23.0" layoutY="84.0" prefHeight="34.0" prefWidth="105.0" styleClass="whitetext" text="Name">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="182.0" layoutY="88.0" prefHeight="25.0" prefWidth="269.0" styleClass="text-field" />
+                  <TextField fx:id="labelName" layoutX="182.0" layoutY="88.0" prefHeight="25.0" prefWidth="269.0" styleClass="text-field" />
                   <Label layoutX="25.0" layoutY="135.0" prefHeight="34.0" prefWidth="122.0" styleClass="whitetext" text="Father Name">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="182.0" layoutY="139.0" prefHeight="25.0" prefWidth="269.0" />
+                  <TextField fx:id="labelFather" layoutX="182.0" layoutY="139.0" prefHeight="25.0" prefWidth="269.0" />
                   <Label layoutX="27.0" layoutY="187.0" prefHeight="34.0" prefWidth="95.0" styleClass="whitetext" text="DOB">
                      <font>
                         <Font size="16.0" />
@@ -74,19 +74,19 @@
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="182.0" layoutY="242.0" prefHeight="25.0" prefWidth="269.0" />
+                  <TextField fx:id="address" layoutX="182.0" layoutY="242.0" prefHeight="25.0" prefWidth="269.0" />
                   <Label layoutX="27.0" layoutY="288.0" prefHeight="34.0" prefWidth="145.0" styleClass="whitetext" text="Contact number">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="182.0" layoutY="292.0" prefHeight="25.0" prefWidth="269.0" />
+                  <TextField fx:id="number" layoutX="182.0" layoutY="292.0" prefHeight="25.0" prefWidth="269.0" />
                   <Label layoutX="27.0" layoutY="338.0" prefHeight="34.0" prefWidth="122.0" styleClass="whitetext" text="E-mail">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="182.0" layoutY="342.0" prefHeight="25.0" prefWidth="269.0" />
+                  <TextField fx:id="email" layoutX="182.0" layoutY="342.0" prefHeight="25.0" prefWidth="269.0" />
                   <Label layoutX="49.0" layoutY="22.0" prefHeight="40.0" prefWidth="412.0" styleClass="whitetitle_subhead" text="Citizen Personal Information">
                      <font>
                         <Font size="16.0" />

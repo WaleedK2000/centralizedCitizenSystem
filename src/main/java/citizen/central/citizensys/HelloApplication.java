@@ -29,7 +29,7 @@ public class HelloApplication extends Application {
         //dbLogin.addUser("147", "123");
 
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("center_user.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("welcome.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Central Citizen System");

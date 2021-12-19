@@ -38,12 +38,9 @@ public class Appointment {
     }
 
     public void book_available_slot(DatePicker date, String slot, String cnic) throws SQLException {
-
         this.date = date;
         this.selectedSlot = slot;
         this.cnic = cnic;
-
-
     }
 
     public String do_booking_confirmation() throws SQLException {

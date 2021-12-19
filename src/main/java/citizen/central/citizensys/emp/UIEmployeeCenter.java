@@ -1,5 +1,6 @@
 package citizen.central.citizensys.emp;
 
+import citizen.central.citizensys.HelloApplication;
 import citizen.central.citizensys.cnic.UIRenewcnic;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,10 +11,14 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 
 public class UIEmployeeCenter {
 
 
+    public static URL getResource() {
+        return UIEmployeeCenter.class.getResource("employee_center.fxml");
+    }
 
     @FXML
     void createCRC(ActionEvent event) throws IOException {
@@ -54,7 +59,18 @@ public class UIEmployeeCenter {
     }
 
     @FXML
-    void issuePassport(ActionEvent event) {
+    void issuePassport(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(UIPass.getResource());
+        Parent root = loader.load();
+        UIPass ui_class = loader.getController();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("RENEW");
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.showAndWait();
+
+
+
 
     }
 

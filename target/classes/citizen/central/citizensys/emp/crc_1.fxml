@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox prefHeight="472.0" prefWidth="977.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<HBox prefHeight="472.0" prefWidth="977.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="citizen.central.citizensys.emp.UICRC_1">
     <children>
         <VBox prefHeight="472.0" prefWidth="472.0" styleClass="whitetitle" stylesheets="@css/main.css">
             <children>

@@ -16,11 +16,13 @@ module citizen.central.citizensys {
 
     opens citizen.central.citizensys to javafx.fxml, org.hibernate.orm.core;
     opens citizen.central.citizensys.payment to javafx.fxml;
-    opens citizen.central.citizensys.appointment to javafx.fxml;
+    opens citizen.central.citizensys.appointment to javafx.fxml, org.hibernate.orm.core;
     opens citizen.central.citizensys.login to javafx.fxml;
     opens citizen.central.citizensys.cnic to javafx.fxml;
     opens citizen.central.citizensys.user to javafx.fxml;
+    opens citizen.central.citizensys.emp to javafx.fxml;
     opens gov.nadra to org.hibernate.orm.core;
+    opens gov.UnionCouncil to org.hibernate.orm.core;
 
 
     exports citizen.central.citizensys;
@@ -32,6 +34,7 @@ module citizen.central.citizensys {
     exports citizen.central.db;
     exports gov.nadra;
     exports gov.DGIP;
-
+    exports citizen.central.citizensys.emp;
+    exports gov.UnionCouncil;
 
 }

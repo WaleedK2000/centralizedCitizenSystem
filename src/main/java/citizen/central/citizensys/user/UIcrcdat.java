@@ -74,7 +74,7 @@ public class UIcrcdat {
         if (mother_dat == null) {
             mothername = "Not Found";
         } else {
-            fathername = mother_dat.getFirst_name() + mother_dat.getLast_name();
+            mothername = mother_dat.getFirst_name() + mother_dat.getLast_name();
         }
         motherNameLabel.setText(mothername);
     }

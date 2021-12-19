@@ -69,8 +69,8 @@ public class DBToken {
     }
 
     public static boolean exists(String tok) {
-        List<DBToken> list = getRecord(tok);
-        return !list.isEmpty();
+        //List<DBToken> list = getRecord(tok);
+        return false;
     }
 
     private static List<DBToken> getRecord(String tok) {
@@ -87,6 +87,8 @@ public class DBToken {
         trans = session.beginTransaction();
 
         String query = "SELECT * FROM tokens WHERE token = " + tok;
+
+
 
         return session.createNativeQuery(query, DBToken.class).list();
 
