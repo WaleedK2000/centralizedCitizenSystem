@@ -19,11 +19,10 @@ public class Employee {
     private String designation;
 
 
-    public Employee()
-    {
+    public Employee() {
     }
 
-    public Employee( String emp_name, String designation) {
+    public Employee(String emp_name, String designation) {
 
         this.emp_name = emp_name;
         this.designation = designation;
@@ -45,4 +44,4 @@ public class Employee {
     public void setDesignation(String designation) {
         this.designation = designation;
     }
-    }
+}

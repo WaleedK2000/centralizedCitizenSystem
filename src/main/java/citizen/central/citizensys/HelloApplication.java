@@ -1,9 +1,5 @@
 package citizen.central.citizensys;
 
-import citizen.central.citizensys.login.DBLogin;
-import gov.nadra.DBNadra;
-import gov.nadra.Nadra;
-import gov.nadra.Nadra_Record;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -11,8 +7,6 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Calendar;
-import java.util.Date;
 
 public class HelloApplication extends Application {
     public static void main(String[] args) {
@@ -35,7 +29,7 @@ public class HelloApplication extends Application {
         //dbLogin.addUser("147", "123");
 
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("center_user.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("welcome.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Central Citizen System");

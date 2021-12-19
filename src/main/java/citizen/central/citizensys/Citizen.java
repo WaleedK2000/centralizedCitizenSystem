@@ -21,13 +21,13 @@ public class Citizen {
     public Citizen() {
     }
 
-    public Citizen( String cnic, String password) {
+    public Citizen(String cnic, String password) {
 
         this.cnic = cnic;
         this.password = password;
     }
 
-    public boolean validatePassword(String password){
+    public boolean validatePassword(String password) {
         return Objects.equals(this.password, password);
     }
 

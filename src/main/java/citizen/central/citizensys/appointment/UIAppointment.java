@@ -32,7 +32,7 @@ public class UIAppointment {
     @FXML
     private ChoiceBox<String> slot;
 
-    private Citizen_info citizen_info;
+    private final Citizen_info citizen_info;
 
     public UIAppointment() {
         ObservableList<String> list = FXCollections.observableArrayList();
@@ -40,7 +40,9 @@ public class UIAppointment {
         citizen_info = new Citizen_info();
     }
 
-
+    public static URL getResource() {
+        return UIAppointment.class.getResource("appointment.fxml");
+    }
 
     public DatePicker getDate() {
         return date;
@@ -50,12 +52,6 @@ public class UIAppointment {
         return slot;
     }
 
-    public static URL getResource() {
-        return UIAppointment.class.getResource("appointment.fxml");
-    }
-
-
-
     @FXML
     public void loadSlots(ActionEvent event) throws SQLException {
         System.out.println("yes: ");
@@ -63,13 +59,11 @@ public class UIAppointment {
         Date dateObj = Date.valueOf(date.getValue());
 
 
-
         ObservableList<String> ol = Database.getAvailableSlots(dateObj);
         slot.setItems(ol);
         Appointment appointment = new Appointment();
 
         appointment.check_avaliable_slots(dateObj);
-
 
 
         System.out.println("h");

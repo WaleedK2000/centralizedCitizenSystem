@@ -1,6 +1,5 @@
 package gov.nadra;
 
-import citizen.central.citizensys.Citizen;
 import citizen.central.db.Dbcon;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -19,7 +18,7 @@ public class DBNadra {
     private final Transaction trans;
 
 
-    public DBNadra(){
+    public DBNadra() {
         con = Dbcon.getDbCon();
         con.configure().addAnnotatedClass(Nadra_Record.class);
         sf = con.buildSessionFactory();
@@ -27,13 +26,12 @@ public class DBNadra {
         trans = session.beginTransaction();
     }
 
-    public boolean addRecord(Nadra_Record record){
+    public boolean addRecord(Nadra_Record record) {
 
-        if(!exists(record.getCnic())){
+        if (!exists(record.getCnic())) {
             System.out.println("Already Exists");
             return false;
-        }
-        else {
+        } else {
             session.save(record);
             trans.commit();
             return true;
@@ -41,22 +39,20 @@ public class DBNadra {
 
     }
 
-    public boolean exists(String cnic){
+    public boolean exists(String cnic) {
         List<Nadra_Record> list = getRecord(cnic);
         return !list.isEmpty();
     }
 
-    public List<Nadra_Record> getRecord(String cnic){
+    public List<Nadra_Record> getRecord(String cnic) {
         String query = "SELECT * FROM nadra WHERE cnic = " + cnic;
 
 
-
-        return session.createNativeQuery(query,Nadra_Record.class).list();
+        return session.createNativeQuery(query, Nadra_Record.class).list();
     }
 
 
-
     public Date getCnicExpiry(String cnic) {
-        return new Date(2019, Calendar.SEPTEMBER,2021);
+        return new Date(2019, Calendar.SEPTEMBER, 2021);
     }
 }

@@ -18,7 +18,7 @@ public class UIcrcdat {
 
     private String fathername = "";
     private String mothername = "";
-    private  String sFathecnic;
+    private String sFathecnic;
     private String sMothercnic;
 
     @FXML
@@ -44,6 +44,10 @@ public class UIcrcdat {
 
     private Citizen_info citizen_info;
 
+    public static URL getResource() {
+        return UIcrcdat.class.getResource("crc_data.fxml");
+    }
+
     public void setCitizen_controller(Citizen_info citizen_info) {
         this.citizen_info = citizen_info;
     }
@@ -54,11 +58,10 @@ public class UIcrcdat {
         fathername = "Father Name";
         Nadra_Record father_det = citizen_info.get_info(fathercnic.getText());
 
-        if(father_det == null){
+        if (father_det == null) {
             fathername = "Not Found";
-        }
-        else {
-            fathername  = father_det.getFirst_name() + father_det.getLast_name();
+        } else {
+            fathername = father_det.getFirst_name() + father_det.getLast_name();
         }
         fatherNameLabel.setText(fathername);
     }
@@ -68,25 +71,24 @@ public class UIcrcdat {
         mothername = "Mother Name";
         Nadra_Record mother_dat = citizen_info.get_info(mothercnic.getText());
 
-        if(mother_dat == null){
+        if (mother_dat == null) {
             mothername = "Not Found";
-        }
-        else {
-            fathername  = mother_dat.getFirst_name() + mother_dat.getLast_name();
+        } else {
+            mothername = mother_dat.getFirst_name() + mother_dat.getLast_name();
         }
         motherNameLabel.setText(mothername);
     }
 
     @FXML
     void verify(ActionEvent event) {
-        if (!Objects.equals(fathername, "") && !Objects.equals(mothername, "")){
+        if (!Objects.equals(fathername, "") && !Objects.equals(mothername, "")) {
             validLabel.setText("All Data Valid");
             buttonVer.setText("Proceed");
             buttonVer.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent actionEvent) {
                     System.out.println("wo");
-                    Stage stage= (Stage) motherNameLabel.getScene().getWindow();
+                    Stage stage = (Stage) motherNameLabel.getScene().getWindow();
                     stage.close();
                 }
             });
@@ -95,23 +97,17 @@ public class UIcrcdat {
             sFathecnic = fathercnic.getText();
             sMothercnic = mothercnic.getText();
 
-        }
-        else {
+        } else {
             loadFatherDetails();
             loadMotherDetails();
         }
     }
 
-    public String getFatherDetails(){
-        return  sFathecnic + "," + fathercnic.getText();
+    public String getFatherDetails() {
+        return sFathecnic + "," + fathercnic.getText();
     }
 
-    public String getMotherDetails(){
-        return  sMothercnic + "," + mothercnic.getText();
-    }
-
-
-    public static URL getResource() {
-        return UIcrcdat.class.getResource("crc_data.fxml");
+    public String getMotherDetails() {
+        return sMothercnic + "," + mothercnic.getText();
     }
 }

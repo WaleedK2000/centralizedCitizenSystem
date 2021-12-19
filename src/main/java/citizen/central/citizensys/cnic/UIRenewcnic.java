@@ -33,11 +33,31 @@ public class UIRenewcnic implements Initializable {
 
     private Citizen_info citizen_info;
 
-    private String cnic = "147";
+    private  String cnic;
 
     private Nadra_Record record;
     @FXML
     private Label validMsg;
+
+    public void setCnic(String cnic) {
+        this.cnic = cnic;
+    }
+
+    public static void launch(String cnic) throws IOException {
+        FXMLLoader loader = new FXMLLoader(UIRenewcnic.getResource());
+        Parent root = loader.load();
+        UIRenewcnic ui_class = loader.getController();
+        ui_class.setCnic(cnic);
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("RENEW");
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.showAndWait();
+    }
+
+    private static URL getResource() {
+        return UIRenewcnic.class.getResource("renewcnic.fxml");
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -45,11 +65,10 @@ public class UIRenewcnic implements Initializable {
         int valid = citizen_info.renew_cnic(cnic);
         record = citizen_info.get_info();
 
-        if(valid == -1){
+        if (valid == -1) {
             validMsg.setText("Cnic Not Valid. Please Visit Nearest NADRA Office");
             payLabel.setDisable(true);
-        }
-        else if (valid == -2){
+        } else if (valid == -2) {
             validMsg.setText("CNIC Validity period is greater than One Month");
             payLabel.setDisable(true);
         }
@@ -75,30 +94,14 @@ public class UIRenewcnic implements Initializable {
         iconOne.setIconLiteral("ci-checkmark");
 
         String cardnum = appointment.getCardDet();
-        Payment pay = new Payment(1800,cardnum);
+        Payment pay = new Payment(1800, cardnum);
 
     }
 
     @FXML
     void closeWindow(ActionEvent event) {
-        Stage stage= (Stage) payLabel.getScene().getWindow();
+        Stage stage = (Stage) payLabel.getScene().getWindow();
         stage.close();
-    }
-
-    public static void launch() throws IOException {
-        FXMLLoader loader = new FXMLLoader(UIRenewcnic.getResource());
-        Parent root = loader.load();
-        UIRenewcnic ui_class = loader.getController();
-
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.setTitle("RENEW");
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.showAndWait();
-    }
-
-    private static URL getResource() {
-        return UIRenewcnic.class.getResource("renewcnic.fxml");
     }
 
 }

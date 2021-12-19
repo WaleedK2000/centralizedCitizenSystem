@@ -32,7 +32,7 @@ public class UILogin {
         System.out.println("Pass = " + password.getText());
 
         DBLogin dbLogin = new DBLogin();
-        if (dbLogin.validate_credential(userID.getText(),password.getText(),'u')){
+        if (dbLogin.validate_credential(userID.getText(), password.getText(), 'u')) {
             cnic = userID.getText();
             closeWindow();
         }
@@ -40,7 +40,7 @@ public class UILogin {
 
 
     void closeWindow() {
-        Stage stage= (Stage) userID.getScene().getWindow();
+        Stage stage = (Stage) userID.getScene().getWindow();
         stage.close();
     }
 

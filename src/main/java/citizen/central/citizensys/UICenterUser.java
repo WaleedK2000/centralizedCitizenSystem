@@ -2,6 +2,7 @@ package citizen.central.citizensys;
 
 import citizen.central.citizensys.cnic.UINewcnic;
 import citizen.central.citizensys.cnic.UIRenewcnic;
+import citizen.central.citizensys.emp.UIEmployeeCenter;
 import citizen.central.citizensys.login.UILogin;
 import citizen.central.citizensys.user.UILearnerPermit;
 import citizen.central.citizensys.user.UINewjv;
@@ -23,10 +24,15 @@ import java.util.ResourceBundle;
 public class UICenterUser implements Initializable {
 
     private String cnic = "147";
-    private Citizen_info citizen_info;
+    private final Citizen_info citizen_info;
 
-    public UICenterUser(){
+    public UICenterUser() {
         citizen_info = new Citizen_info();
+    }
+
+    public static URL getResource() {
+        return UICenterUser.class.getResource("center_user.fxml");
+
     }
 
     @FXML
@@ -47,12 +53,12 @@ public class UICenterUser implements Initializable {
 
     @FXML
     void renew_cnic(ActionEvent event) throws IOException {
-        UIRenewcnic.launch();
+        UIRenewcnic.launch(cnic);
     }
 
     @FXML
     void appointmentNewJVCard() throws IOException {
-        UINewjv.launch();
+        UINewjv.launch(cnic);
     }
 
     @FXML
@@ -68,7 +74,7 @@ public class UICenterUser implements Initializable {
     @FXML
     void renew_driving_license(ActionEvent event) {
         try {
-            UIRenewDrivingLicense.launch();
+            UIRenewDrivingLicense.launch(cnic);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -92,10 +98,6 @@ public class UICenterUser implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
-
-
 
 
     }

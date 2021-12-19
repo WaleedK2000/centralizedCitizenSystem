@@ -37,10 +37,6 @@ public class UILearnerPermit implements Initializable {
 
     private Citizen_info citizen_info;
 
-    public void setCitizen_controller(Citizen_info citizen_info) {
-        this.citizen_info = citizen_info;
-    }
-
     public static void launch(Citizen_info citizen_info) throws IOException {
         FXMLLoader loader = new FXMLLoader(UILearnerPermit.getResource());
         Parent root = loader.load();
@@ -58,6 +54,10 @@ public class UILearnerPermit implements Initializable {
 
     private static URL getResource() {
         return UILearnerPermit.class.getResource("learnerPermit.fxml");
+    }
+
+    public void setCitizen_controller(Citizen_info citizen_info) {
+        this.citizen_info = citizen_info;
     }
 
     @FXML
@@ -81,11 +81,11 @@ public class UILearnerPermit implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        if(citizen_info == null){
+        if (citizen_info == null) {
             citizen_info = new Citizen_info();
         }
 
-        if(!citizen_info.checkLearnerEligibility()){
+        if (!citizen_info.checkLearnerEligibility()) {
             validmsg.setText("You already have A license");
             paymentLabel.setDisable(true);
         }
@@ -93,10 +93,9 @@ public class UILearnerPermit implements Initializable {
 
     @FXML
     void closeWindow(ActionEvent event) {
-        Stage stage= (Stage) paymentLabel.getScene().getWindow();
+        Stage stage = (Stage) paymentLabel.getScene().getWindow();
         stage.close();
     }
-
 
 
 }

@@ -46,9 +46,28 @@ public class UIcrc {
 
     private Citizen_info citizen_info;
 
-    private String cnic = "147";
+    private final String cnic = "147";
 
     private String tok;
+
+    public static void launch(Citizen_info citizen_info) throws IOException {
+        FXMLLoader loader = new FXMLLoader(UIcrc.getResource());
+        Parent root = loader.load();
+        UIcrc UI_Class = loader.getController();
+
+        UI_Class.setCitizen_controller(citizen_info);
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Payment");
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setResizable(false);
+        stage.showAndWait();
+    }
+
+    private static URL getResource() {
+        return UIcrc.class.getResource("crc.fxml");
+    }
 
     public Citizen_info getCitizen_controller() {
         return citizen_info;
@@ -80,8 +99,8 @@ public class UIcrc {
         iconTwo.setIconLiteral("ci-checkmark");
         appointmentLabel.setText(appointment.getDateTime());
 
-        System.out.println( "Time is: " + appointment.getDateTime());
-        citizen_info.book_slot(appointment.getDate(),appointment.getSlot().getValue(),cnic);
+        System.out.println("Time is: " + appointment.getDateTime());
+        citizen_info.book_slot(appointment.getDate(), appointment.getSlot().getValue(), cnic);
 
     }
 
@@ -93,7 +112,7 @@ public class UIcrc {
     @FXML
     void genToken(MouseEvent event) {
         tok = citizen_info.generateToken();
-        tokenLabel.setText("Your Token " + tok );
+        tokenLabel.setText("Your Token " + tok);
         iconThree.setIconLiteral("ci-checkmark");
     }
 
@@ -103,7 +122,7 @@ public class UIcrc {
         UIPayment.launchPayment();
         payLabel.setText("Payment Complete");
         iconTwo.setIconLiteral("ci-checkmark");
-        citizen_info.do_payment(1800,"CRC");
+        citizen_info.do_payment(1800, "CRC");
         citizen_info.do_booking_confirmation();
 
     }
@@ -132,27 +151,8 @@ public class UIcrc {
 
     @FXML
     void closeWindow(ActionEvent event) {
-        Stage stage= (Stage) payLabel.getScene().getWindow();
+        Stage stage = (Stage) payLabel.getScene().getWindow();
         stage.close();
-    }
-
-    public static void launch(Citizen_info citizen_info) throws IOException {
-        FXMLLoader loader = new FXMLLoader(UIcrc.getResource());
-        Parent root = loader.load();
-        UIcrc UI_Class = loader.getController();
-
-        UI_Class.setCitizen_controller(citizen_info);
-
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.setTitle("Payment");
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setResizable(false);
-        stage.showAndWait();
-    }
-
-    private static URL getResource() {
-        return UIcrc.class.getResource("crc.fxml");
     }
 
 }

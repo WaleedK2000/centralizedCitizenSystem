@@ -1,8 +1,5 @@
 package gov.nadra;
 
-import javafx.util.converter.LocalDateStringConverter;
-
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -11,62 +8,56 @@ public class Nadra {
     private final DBNadra record_database;
     private String cnic;
 
-    public Nadra(String cnic){
+    public Nadra(String cnic) {
         record_database = new DBNadra();
     }
 
-    public boolean checkValidCnic(){
+    public boolean checkValidCnic() {
         return true;
     }
 
-    public Date getExpiryDate(){
+    public Date getExpiryDate() {
         return record_database.getCnicExpiry(cnic);
     }
 
-    public Nadra_Record get_info(){
+    public Nadra_Record get_info() {
         List<Nadra_Record> list = record_database.getRecord(cnic);
-        if(list.isEmpty()){
+        if (list.isEmpty()) {
             return null;
-        }
-        else{
+        } else {
             return list.get(0);
         }
     }
 
-    public Nadra_Record get_info(String cnic){
+    public Nadra_Record get_info(String cnic) {
         List<Nadra_Record> list = record_database.getRecord(cnic);
-        if(list.isEmpty()){
+        if (list.isEmpty()) {
             return null;
-        }
-        else{
+        } else {
             return list.get(0);
         }
     }
 
-    public int getAge(){
+    public int getAge() {
         List<Nadra_Record> list = record_database.getRecord(cnic);
 
-        if(!list.isEmpty()){
+        if (!list.isEmpty()) {
             long age = new Date().getTime() - list.get(0).getDate_Of_birth().getTime();
             Date ageDate = new Date(age);
 
             return ageDate.getYear();
-        }
-        else {
+        } else {
             return 25;
         }
 
     }
 
-    public boolean appointmentCRC(String details){
+    public boolean appointmentCRC(String details) {
         return true;
     }
 
-public void issue_nic(String cnic)
-{
-}
-
-
+    public void issue_nic(String cnic) {
+    }
 
 
 }
