@@ -11,6 +11,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.Date;
 
 public class HelloApplication extends Application {
@@ -25,8 +26,10 @@ public class HelloApplication extends Application {
 
         DBNadra db = new DBNadra();
         //db.addRecord(new Nadra_Record(0L,"147","Abc", "Xyz", "852", "963" , new Date(1995,02,02),'m'));
-        db.addRecord(new Nadra_Record(0L,"963","Test ", "Mother", "741258", "963887" , new Date(1975,04,07),'f'));
-        db.addRecord(new Nadra_Record(0L,"852","Test", "Father", "85447", "77444558" , new Date(1975,05,02),'m'));
+        db.addRecord(new Nadra_Record(0L,"258","Aminah", "Sheikh", "111", "963887" , new Date(1978, Calendar.JUNE,7),'f'));
+        db.addRecord(new Nadra_Record(0L,"748","Mohammad", "Akram", "999", "77444558" , new Date(1970, Calendar.SEPTEMBER,2),'m'));
+        db.addRecord(new Nadra_Record(0L,"612","Junaid", "Khan", "999", "77444558" , new Date(1973, Calendar.SEPTEMBER,2),'m'));
+
         DBLogin dbLogin = new DBLogin();
 
         //dbLogin.addUser("147", "123");
