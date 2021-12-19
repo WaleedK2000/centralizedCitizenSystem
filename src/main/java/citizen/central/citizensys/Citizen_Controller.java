@@ -45,6 +45,10 @@ public class Citizen_Controller {
         return nadra.get_info();
     }
 
+    public Nadra_Record get_info(String cnic){
+        return nadra.get_info();
+    }
+
     private int getMonthsToDate(Date date){
         long l = date.getTime() - new Date().getTime();
         Date diff =new Date(l);
@@ -103,8 +107,10 @@ public class Citizen_Controller {
        return appointment_token;
    }
 
+    public boolean appointmentCRC(String Details){
 
+       return nadra.appointmentCRC(Details);
 
-
+    }
 
 }

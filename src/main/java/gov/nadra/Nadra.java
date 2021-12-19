@@ -33,6 +33,16 @@ public class Nadra {
         }
     }
 
+    public Nadra_Record get_info(String cnic){
+        List<Nadra_Record> list = record_database.getRecord(cnic);
+        if(list.isEmpty()){
+            return null;
+        }
+        else{
+            return list.get(0);
+        }
+    }
+
     public int getAge(){
         List<Nadra_Record> list = record_database.getRecord(cnic);
 
@@ -46,9 +56,10 @@ public class Nadra {
             return 25;
         }
 
+    }
 
-
-
+    public boolean appointmentCRC(String details){
+        return true;
     }
 
 
