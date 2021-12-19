@@ -29,7 +29,7 @@ public class DBNadra {
 
     public boolean addRecord(Nadra_Record record){
 
-        if(exists(record.getCnic())){
+        if(!exists(record.getCnic())){
             System.out.println("Already Exists");
             return false;
         }

@@ -11,6 +11,7 @@ module citizen.central.citizensys {
     requires java.persistence;
     requires org.hibernate.orm.core;
     requires java.naming;
+    requires mysql.connector.java;
 
 
     opens citizen.central.citizensys to javafx.fxml, org.hibernate.orm.core;

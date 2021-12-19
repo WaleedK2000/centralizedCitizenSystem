@@ -23,7 +23,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
 
-
+        /*
         DBNadra db = new DBNadra();
         //db.addRecord(new Nadra_Record(0L,"147","Abc", "Xyz", "852", "963" , new Date(1995,02,02),'m'));
         db.addRecord(new Nadra_Record(0L,"258","Aminah", "Sheikh", "111", "963887" , new Date(1978, Calendar.JUNE,7),'f'));
@@ -31,7 +31,7 @@ public class HelloApplication extends Application {
         db.addRecord(new Nadra_Record(0L,"612","Junaid", "Khan", "999", "77444558" , new Date(1973, Calendar.SEPTEMBER,2),'m'));
 
         DBLogin dbLogin = new DBLogin();
-
+        */
         //dbLogin.addUser("147", "123");
 
 
