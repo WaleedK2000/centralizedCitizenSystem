@@ -1,9 +1,14 @@
 package citizen.central.citizensys.user;
 
+import citizen.central.citizensys.Citizen_Controller;
 import citizen.central.citizensys.appointment.UIAppointment;
+import citizen.central.citizensys.cnic.UINewcnic;
+import citizen.central.citizensys.cnic.UIRenewcnic;
 import citizen.central.citizensys.payment.UIPayment;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -13,8 +18,10 @@ import javafx.stage.Stage;
 import org.kordamp.ikonli.javafx.FontIcon;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class UINewjv {
+public class UINewjv implements Initializable {
 
     private int tok;
 
@@ -35,6 +42,13 @@ public class UINewjv {
 
     @FXML
     private Label tokenLabel;
+
+    @FXML
+    private Label validMsg;
+
+    private Citizen_Controller citizen_controller;
+
+    private String cnic = "147";
 
     @FXML
     void appointment(MouseEvent event) throws IOException {
@@ -79,6 +93,51 @@ public class UINewjv {
         stage.showAndWait();
         payLabel.setText("Payment Complete");
         iconTwo.setIconLiteral("ci-checkmark");
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        citizen_controller = new Citizen_Controller();
+        int valid = citizen_controller.appointmentNewJVCard(cnic);
+
+
+        if(valid == -1){
+            validMsg.setText("JV Request Not Valid");
+            disableAll();
+        }
+        else if (valid == -2){
+            validMsg.setText("Age Greater than 18");
+            disableAll();
+        }
+    }
+
+    private void disableAll(){
+        tokenLabel.setDisable(true);
+        appointmentLabel.setDisable(true);
+        payLabel.setDisable(true);
+
+    }
+
+    @FXML
+    void closeWindow(ActionEvent event) {
+        Stage stage= (Stage) payLabel.getScene().getWindow();
+        stage.close();
+    }
+
+    public static void launch() throws IOException {
+        FXMLLoader loader = new FXMLLoader(UINewjv.getResource());
+        Parent root = loader.load();
+        UINewjv ui_class = loader.getController();
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("RENEW");
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.showAndWait();
+    }
+
+    private static URL getResource() {
+        return UINewjv.class.getResource("newjv.fxml");
     }
 
 }

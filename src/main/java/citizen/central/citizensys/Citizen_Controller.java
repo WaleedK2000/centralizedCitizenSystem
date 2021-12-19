@@ -67,6 +67,18 @@ public class Citizen_Controller {
        }
    }
 
+   public int appointmentNewJVCard(String cnic){
+        nadra = new Nadra(cnic);
+
+        if(nadra.checkValidCnic()){
+            if(nadra.getAge() < 18){
+                return 0;
+            }
+            return -2;
+        }
+        return -1;
+   }
+
    public ObservableList<String> check_avaliable_slot(){
        appointment = new Appointment();
        return appointment.getSlots();
