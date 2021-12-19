@@ -32,12 +32,15 @@ public class UIAppointment {
     @FXML
     private ChoiceBox<String> slot;
 
+    private Citizen_Controller citizen_controller;
+
     public UIAppointment() {
         ObservableList<String> list = FXCollections.observableArrayList();
         list.add("Islamabad");
+        citizen_controller = new Citizen_Controller();
     }
 
-    private Citizen_Controller citizen_controller;
+
 
     public DatePicker getDate() {
         return date;
@@ -51,13 +54,23 @@ public class UIAppointment {
         return UIAppointment.class.getResource("appointment.fxml");
     }
 
+
+
     @FXML
     public void loadSlots(ActionEvent event) throws SQLException {
         System.out.println("yes: ");
 
         Date dateObj = Date.valueOf(date.getValue());
+
+
+
         ObservableList<String> ol = Database.getAvailableSlots(dateObj);
         slot.setItems(ol);
+        Appointment appointment = new Appointment();
+
+        appointment.check_avaliable_slots(dateObj);
+
+
 
         System.out.println("h");
         for (String s : ol) {

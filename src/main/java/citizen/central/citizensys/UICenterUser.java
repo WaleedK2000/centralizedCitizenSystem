@@ -2,6 +2,7 @@ package citizen.central.citizensys;
 
 import citizen.central.citizensys.cnic.UINewcnic;
 import citizen.central.citizensys.cnic.UIRenewcnic;
+import citizen.central.citizensys.user.UILearnerPermit;
 import citizen.central.citizensys.user.UINewjv;
 import citizen.central.citizensys.user.UIcrc;
 import javafx.event.ActionEvent;
@@ -17,6 +18,11 @@ import java.io.IOException;
 public class UICenterUser {
 
     private String cnic = "147";
+    private Citizen_Controller citizen_controller;
+
+    public UICenterUser(){
+        citizen_controller = new Citizen_Controller();
+    }
 
     @FXML
     void appointmentNewCnc(ActionEvent event) throws IOException {
@@ -46,7 +52,12 @@ public class UICenterUser {
 
     @FXML
     void appointmentNewCRC() throws IOException {
-        UIcrc.launch(new Citizen_Controller());
+        UIcrc.launch(citizen_controller);
+    }
+
+    @FXML
+    void apply_learner_permit() throws IOException {
+        UILearnerPermit.launch(citizen_controller);
     }
 
 }

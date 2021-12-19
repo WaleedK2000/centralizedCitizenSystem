@@ -62,6 +62,12 @@ public class Citizen_Controller {
 
     }
 
+    public boolean apply_learner_permit(){
+        return checkLearnerEligibility();
+    }
+
+
+
     private int getMonthsToDate(Date date){
         long l = date.getTime() - new Date().getTime();
         Date diff =new Date(l);
@@ -124,6 +130,10 @@ public class Citizen_Controller {
 
        return nadra.appointmentCRC(Details);
 
+    }
+
+    public boolean checkLearnerEligibility(){
+        return true;
     }
 
 }
