@@ -1,6 +1,6 @@
 package citizen.central.citizensys.user;
 
-import citizen.central.citizensys.Citizen_Controller;
+import citizen.central.citizensys.Citizen_info;
 import citizen.central.citizensys.payment.UIPayment;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -35,17 +35,17 @@ public class UILearnerPermit implements Initializable {
     @FXML
     private Label printLabel;
 
-    private Citizen_Controller citizen_controller;
+    private Citizen_info citizen_info;
 
-    public void setCitizen_controller(Citizen_Controller citizen_controller) {
-        this.citizen_controller = citizen_controller;
+    public void setCitizen_controller(Citizen_info citizen_info) {
+        this.citizen_info = citizen_info;
     }
 
-    public static void launch(Citizen_Controller citizen_controller) throws IOException {
+    public static void launch(Citizen_info citizen_info) throws IOException {
         FXMLLoader loader = new FXMLLoader(UILearnerPermit.getResource());
         Parent root = loader.load();
         UILearnerPermit UI_Class = loader.getController();
-        UI_Class.setCitizen_controller(citizen_controller);
+        UI_Class.setCitizen_controller(citizen_info);
 
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
@@ -67,7 +67,7 @@ public class UILearnerPermit implements Initializable {
         UIPayment.launchPayment();
         paymentLabel.setText("Payment Complete");
         iconOne.setIconLiteral("ci-checkmark");
-        citizen_controller.do_payment(1800, "lp");
+        citizen_info.do_payment(1800, "lp");
 
     }
 
@@ -81,11 +81,11 @@ public class UILearnerPermit implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        if(citizen_controller == null){
-            citizen_controller = new Citizen_Controller();
+        if(citizen_info == null){
+            citizen_info = new Citizen_info();
         }
 
-        if(!citizen_controller.checkLearnerEligibility()){
+        if(!citizen_info.checkLearnerEligibility()){
             validmsg.setText("You already have A license");
             paymentLabel.setDisable(true);
         }

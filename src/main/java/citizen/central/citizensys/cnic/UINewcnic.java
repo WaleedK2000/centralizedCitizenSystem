@@ -1,6 +1,6 @@
 package citizen.central.citizensys.cnic;
 
-import citizen.central.citizensys.Citizen_Controller;
+import citizen.central.citizensys.Citizen_info;
 import citizen.central.citizensys.appointment.UIAppointment;
 import citizen.central.citizensys.payment.UIPayment;
 import javafx.event.ActionEvent;
@@ -45,11 +45,11 @@ public class UINewcnic {
 
     private String cnic;
 
-    Citizen_Controller citizen_controller;
+    Citizen_info citizen_info;
 
     public void newCnic(String cnic){
         this.cnic = cnic;
-        int cond = citizen_controller.appointmentNewCNic(cnic);
+        int cond = citizen_info.appointmentNewCNic(cnic);
         if(cond == -2){
             valid_msg.setText("You are under 18. Consider making JV instead");
         }
@@ -59,7 +59,7 @@ public class UINewcnic {
     }
 
     public UINewcnic(){
-        citizen_controller = new Citizen_Controller();
+        citizen_info = new Citizen_info();
     }
 
 
@@ -75,7 +75,7 @@ public class UINewcnic {
 
     @FXML
     void genToken(MouseEvent event) {
-        tok = citizen_controller.generateToken();
+        tok = citizen_info.generateToken();
         tokenLabel.setText("Your Token " + tok );
         iconThree.setIconLiteral("ci-checkmark");
     }
@@ -89,7 +89,7 @@ public class UINewcnic {
         Parent root = loader.load();
         UIAppointment appointment = loader.getController();
         appointment.labelAppointment("Apply for New CNIC");
-        citizen_controller.check_avaliable_slot();
+        citizen_info.check_avaliable_slot();
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.setTitle("Appointment");
@@ -103,7 +103,7 @@ public class UINewcnic {
         appointmentLabel.setText(appointment.getDateTime());
 
         System.out.println( "Time is: " + appointment.getDateTime());
-        citizen_controller.book_slot(appointment.getDate(),appointment.getSlot().getValue(),cnic);
+        citizen_info.book_slot(appointment.getDate(),appointment.getSlot().getValue(),cnic);
 
 
     }
@@ -124,7 +124,7 @@ public class UINewcnic {
         payLabel.setText("Payment Complete");
         iconTwo.setIconLiteral("ci-checkmark");
 
-        citizen_controller.do_booking_confirmation();
+        citizen_info.do_booking_confirmation();
 
     }
 

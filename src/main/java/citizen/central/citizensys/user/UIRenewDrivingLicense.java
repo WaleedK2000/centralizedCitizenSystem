@@ -1,6 +1,6 @@
 package citizen.central.citizensys.user;
 
-import citizen.central.citizensys.Citizen_Controller;
+import citizen.central.citizensys.Citizen_info;
 import citizen.central.citizensys.payment.UIPayment;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -31,7 +31,7 @@ public class UIRenewDrivingLicense implements Initializable {
     @FXML
     private Label validmsg;
 
-    private Citizen_Controller citizen_controller;
+    private Citizen_info citizen_info;
 
     private String cnic = "147";
 
@@ -43,7 +43,7 @@ public class UIRenewDrivingLicense implements Initializable {
         paymentLabel.setText("Payment Complete");
         iconOne.setIconLiteral("ci-checkmark");
 
-        if(!citizen_controller.requestRenewalDriving(cnic)){
+        if(!citizen_info.requestRenewalDriving(cnic)){
             deliveryMsg.setText("Request Failed. Please visit traffic office.");
         }
 
@@ -53,8 +53,8 @@ public class UIRenewDrivingLicense implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        citizen_controller = new Citizen_Controller();
-        boolean valid = citizen_controller.renew_driving_license();
+        citizen_info = new Citizen_info();
+        boolean valid = citizen_info.renew_driving_license();
 
         if (!valid){
             validmsg.setText("Request Invalid");

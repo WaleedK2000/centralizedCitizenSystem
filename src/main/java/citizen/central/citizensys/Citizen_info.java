@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
 
-public class Citizen_Controller {
+public class Citizen_info {
 
     static Nadra nadra;
     static Appointment appointment;

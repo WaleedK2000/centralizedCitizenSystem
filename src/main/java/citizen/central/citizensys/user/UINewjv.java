@@ -1,9 +1,7 @@
 package citizen.central.citizensys.user;
 
-import citizen.central.citizensys.Citizen_Controller;
+import citizen.central.citizensys.Citizen_info;
 import citizen.central.citizensys.appointment.UIAppointment;
-import citizen.central.citizensys.cnic.UINewcnic;
-import citizen.central.citizensys.cnic.UIRenewcnic;
 import citizen.central.citizensys.payment.UIPayment;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -46,7 +44,7 @@ public class UINewjv implements Initializable {
     @FXML
     private Label validMsg;
 
-    private Citizen_Controller citizen_controller;
+    private Citizen_info citizen_info;
 
     private String cnic = "147";
 
@@ -97,8 +95,8 @@ public class UINewjv implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        citizen_controller = new Citizen_Controller();
-        int valid = citizen_controller.appointmentNewJVCard(cnic);
+        citizen_info = new Citizen_info();
+        int valid = citizen_info.appointmentNewJVCard(cnic);
 
 
         if(valid == -1){

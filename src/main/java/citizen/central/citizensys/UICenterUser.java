@@ -23,10 +23,10 @@ import java.util.ResourceBundle;
 public class UICenterUser implements Initializable {
 
     private String cnic = "147";
-    private Citizen_Controller citizen_controller;
+    private Citizen_info citizen_info;
 
     public UICenterUser(){
-        citizen_controller = new Citizen_Controller();
+        citizen_info = new Citizen_info();
     }
 
     @FXML
@@ -57,12 +57,12 @@ public class UICenterUser implements Initializable {
 
     @FXML
     void appointmentNewCRC() throws IOException {
-        UIcrc.launch(citizen_controller);
+        UIcrc.launch(citizen_info);
     }
 
     @FXML
     void apply_learner_permit() throws IOException {
-        UILearnerPermit.launch(citizen_controller);
+        UILearnerPermit.launch(citizen_info);
     }
 
     @FXML

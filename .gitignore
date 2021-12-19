@@ -26,3 +26,6 @@ hs_err_pid*
 src/main/resources/hibernate.cfg.xml
 src/main/java/citizen/central/db/Dbcon.java
 
+target/classes/hibernate.cfg.xml
+src/main/java/citizen/central/citizensys/login/DBLogin.java
+

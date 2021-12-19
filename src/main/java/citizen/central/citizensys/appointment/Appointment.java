@@ -1,6 +1,5 @@
 package citizen.central.citizensys.appointment;
 
-import citizen.central.citizensys.Citizen_Controller;
 import javafx.collections.ObservableList;
 import javafx.scene.control.DatePicker;
 

@@ -1,6 +1,6 @@
 package citizen.central.citizensys.appointment;
 
-import citizen.central.citizensys.Citizen_Controller;
+import citizen.central.citizensys.Citizen_info;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -32,12 +32,12 @@ public class UIAppointment {
     @FXML
     private ChoiceBox<String> slot;
 
-    private Citizen_Controller citizen_controller;
+    private Citizen_info citizen_info;
 
     public UIAppointment() {
         ObservableList<String> list = FXCollections.observableArrayList();
         list.add("Islamabad");
-        citizen_controller = new Citizen_Controller();
+        citizen_info = new Citizen_info();
     }
 
 
