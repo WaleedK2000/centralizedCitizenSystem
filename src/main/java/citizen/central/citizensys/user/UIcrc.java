@@ -1,6 +1,7 @@
 package citizen.central.citizensys.user;
 
-import citizen.central.citizensys.Citizen_Controller;
+import citizen.central.citizensys.Citizen_info;
+import citizen.central.citizensys.appointment.Appointment;
 import citizen.central.citizensys.appointment.UIAppointment;
 import citizen.central.citizensys.payment.UIPayment;
 import javafx.event.ActionEvent;
@@ -43,18 +44,18 @@ public class UIcrc {
     @FXML
     private Label tokenLabel;
 
-    private Citizen_Controller citizen_controller;
+    private Citizen_info citizen_info;
 
     private String cnic = "147";
 
     private String tok;
 
-    public Citizen_Controller getCitizen_controller() {
-        return citizen_controller;
+    public Citizen_info getCitizen_controller() {
+        return citizen_info;
     }
 
-    public void setCitizen_controller(Citizen_Controller citizen_controller) {
-        this.citizen_controller = citizen_controller;
+    public void setCitizen_controller(Citizen_info citizen_info) {
+        this.citizen_info = citizen_info;
     }
 
     @FXML
@@ -65,6 +66,10 @@ public class UIcrc {
         Parent root = loader.load();
         UIAppointment appointment = loader.getController();
         appointment.labelAppointment("New CRC");
+        Appointment app = new Appointment();
+
+        citizen_info.check_avaliable_slot();
+
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.setTitle("Appointment");
@@ -76,15 +81,10 @@ public class UIcrc {
         appointmentLabel.setText(appointment.getDateTime());
 
         System.out.println( "Time is: " + appointment.getDateTime());
-        citizen_controller.book_slot(appointment.getDate(),appointment.getSlot().getValue(),cnic);
+        citizen_info.book_slot(appointment.getDate(),appointment.getSlot().getValue(),cnic);
 
     }
-    /*
-    @FXML
-    void enterDat(MouseEvent event) throws IOException {
 
-    }
-    */
     @FXML
     void enterDat(MouseEvent event) {
 
@@ -92,7 +92,7 @@ public class UIcrc {
 
     @FXML
     void genToken(MouseEvent event) {
-        tok = citizen_controller.generateToken();
+        tok = citizen_info.generateToken();
         tokenLabel.setText("Your Token " + tok );
         iconThree.setIconLiteral("ci-checkmark");
     }
@@ -103,8 +103,8 @@ public class UIcrc {
         UIPayment.launchPayment();
         payLabel.setText("Payment Complete");
         iconTwo.setIconLiteral("ci-checkmark");
-
-        citizen_controller.do_booking_confirmation();
+        citizen_info.do_payment(1800,"CRC");
+        citizen_info.do_booking_confirmation();
 
     }
 
@@ -115,7 +115,7 @@ public class UIcrc {
         FXMLLoader loader = new FXMLLoader(UIcrcdat.getResource());
         Parent root = loader.load();
         UIcrcdat crc_dat = loader.getController();
-        crc_dat.setCitizen_controller(citizen_controller);
+        crc_dat.setCitizen_controller(citizen_info);
 
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
@@ -136,12 +136,12 @@ public class UIcrc {
         stage.close();
     }
 
-    public static void launch(Citizen_Controller citizen_controller) throws IOException {
+    public static void launch(Citizen_info citizen_info) throws IOException {
         FXMLLoader loader = new FXMLLoader(UIcrc.getResource());
         Parent root = loader.load();
         UIcrc UI_Class = loader.getController();
 
-        UI_Class.setCitizen_controller(citizen_controller);
+        UI_Class.setCitizen_controller(citizen_info);
 
         Stage stage = new Stage();
         stage.setScene(new Scene(root));

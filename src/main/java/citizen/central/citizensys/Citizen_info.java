@@ -2,27 +2,22 @@ package citizen.central.citizensys;
 
 import citizen.central.citizensys.appointment.Appointment;
 import citizen.central.citizensys.payment.Payment;
-import citizen.central.db.Dbcon;
 import gov.nadra.DBNadra;
 import gov.nadra.Nadra;
 import gov.nadra.Nadra_Record;
+import gov.nadra.TrafficPolice;
 import javafx.collections.ObservableList;
 import javafx.scene.control.DatePicker;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 
 import java.sql.SQLException;
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
-public class Citizen_Controller {
+public class Citizen_info {
 
-    Nadra nadra;
-    Appointment appointment;
-    String appointment_token;
+    static Nadra nadra;
+    static Appointment appointment;
+    static String appointment_token;
 
     public int renew_cnic(String cnic){
 
@@ -61,6 +56,19 @@ public class Citizen_Controller {
 
 
     }
+
+    public boolean apply_learner_permit(){
+        return checkLearnerEligibility();
+    }
+
+    public boolean renew_driving_license(){
+        return checkLearnerEligibility();
+
+    }
+
+
+
+
 
     private int getMonthsToDate(Date date){
         long l = date.getTime() - new Date().getTime();
@@ -128,6 +136,15 @@ public class Citizen_Controller {
 
        return nadra.appointmentCRC(Details);
 
+    }
+
+    public boolean checkLearnerEligibility()  {
+        return true;
+    }
+
+    public boolean requestRenewalDriving(String cnic){
+        TrafficPolice trafficPolice = new TrafficPolice();
+        return trafficPolice.sendRequest("RD",cnic);
     }
 
 }

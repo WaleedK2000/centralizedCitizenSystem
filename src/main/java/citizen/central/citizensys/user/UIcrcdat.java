@@ -1,7 +1,6 @@
 package citizen.central.citizensys.user;
 
-import citizen.central.citizensys.Citizen_Controller;
-import citizen.central.citizensys.payment.UIPayment;
+import citizen.central.citizensys.Citizen_info;
 import gov.nadra.Nadra_Record;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -43,17 +42,17 @@ public class UIcrcdat {
     @FXML
     private Button buttonVer;
 
-    private Citizen_Controller citizen_controller;
+    private Citizen_info citizen_info;
 
-    public void setCitizen_controller(Citizen_Controller citizen_controller) {
-        this.citizen_controller = citizen_controller;
+    public void setCitizen_controller(Citizen_info citizen_info) {
+        this.citizen_info = citizen_info;
     }
 
     @FXML
     void loadFatherDetails() {
 
         fathername = "Father Name";
-        Nadra_Record father_det = citizen_controller.get_info(fathercnic.getText());
+        Nadra_Record father_det = citizen_info.get_info(fathercnic.getText());
 
         if(father_det == null){
             fathername = "Not Found";
@@ -67,7 +66,7 @@ public class UIcrcdat {
     @FXML
     void loadMotherDetails() {
         mothername = "Mother Name";
-        Nadra_Record mother_dat = citizen_controller.get_info(mothercnic.getText());
+        Nadra_Record mother_dat = citizen_info.get_info(mothercnic.getText());
 
         if(mother_dat == null){
             mothername = "Not Found";
