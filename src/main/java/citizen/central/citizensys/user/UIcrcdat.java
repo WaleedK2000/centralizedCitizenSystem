@@ -53,7 +53,7 @@ public class UIcrcdat {
     void loadFatherDetails() {
 
         fathername = "Father Name";
-        Nadra_Record father_det = citizen_controller.get_info(sFathecnic);
+        Nadra_Record father_det = citizen_controller.get_info(fathercnic.getText());
 
         if(father_det == null){
             fathername = "Not Found";
@@ -66,7 +66,15 @@ public class UIcrcdat {
 
     @FXML
     void loadMotherDetails() {
-         mothername = "mozer name";
+        mothername = "Mother Name";
+        Nadra_Record mother_dat = citizen_controller.get_info(mothercnic.getText());
+
+        if(mother_dat == null){
+            mothername = "Not Found";
+        }
+        else {
+            fathername  = mother_dat.getFirst_name() + mother_dat.getLast_name();
+        }
         motherNameLabel.setText(mothername);
     }
 

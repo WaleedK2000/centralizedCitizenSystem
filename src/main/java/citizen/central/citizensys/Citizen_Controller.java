@@ -3,6 +3,7 @@ package citizen.central.citizensys;
 import citizen.central.citizensys.appointment.Appointment;
 import citizen.central.citizensys.payment.Payment;
 import citizen.central.db.Dbcon;
+import gov.nadra.DBNadra;
 import gov.nadra.Nadra;
 import gov.nadra.Nadra_Record;
 import javafx.collections.ObservableList;
@@ -15,6 +16,7 @@ import org.hibernate.cfg.Configuration;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 
 public class Citizen_Controller {
 
@@ -46,7 +48,18 @@ public class Citizen_Controller {
     }
 
     public Nadra_Record get_info(String cnic){
-        return nadra.get_info();
+        DBNadra db = new DBNadra();
+
+        List<Nadra_Record> rec = db.getRecord(cnic);
+
+        if(rec.isEmpty()){
+            return null;
+        }
+        else {
+            return rec.get(0);
+        }
+
+
     }
 
     private int getMonthsToDate(Date date){

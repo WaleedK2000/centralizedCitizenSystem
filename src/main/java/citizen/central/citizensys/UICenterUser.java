@@ -3,6 +3,7 @@ package citizen.central.citizensys;
 import citizen.central.citizensys.cnic.UINewcnic;
 import citizen.central.citizensys.cnic.UIRenewcnic;
 import citizen.central.citizensys.user.UINewjv;
+import citizen.central.citizensys.user.UIcrc;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -41,6 +42,11 @@ public class UICenterUser {
     @FXML
     void appointmentNewJVCard() throws IOException {
         UINewjv.launch();
+    }
+
+    @FXML
+    void appointmentNewCRC() throws IOException {
+        UIcrc.launch(new Citizen_Controller());
     }
 
 }
