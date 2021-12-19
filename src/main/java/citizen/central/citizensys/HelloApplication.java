@@ -1,5 +1,6 @@
 package citizen.central.citizensys;
 
+import citizen.central.citizensys.login.DBLogin;
 import gov.nadra.DBNadra;
 import gov.nadra.Nadra;
 import gov.nadra.Nadra_Record;
@@ -26,6 +27,10 @@ public class HelloApplication extends Application {
         //db.addRecord(new Nadra_Record(0L,"147","Abc", "Xyz", "852", "963" , new Date(1995,02,02),'m'));
         db.addRecord(new Nadra_Record(0L,"963","Test ", "Mother", "741258", "963887" , new Date(1975,04,07),'f'));
         db.addRecord(new Nadra_Record(0L,"852","Test", "Father", "85447", "77444558" , new Date(1975,05,02),'m'));
+        DBLogin dbLogin = new DBLogin();
+
+        //dbLogin.addUser("147", "123");
+
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("center_user.fxml"));
 

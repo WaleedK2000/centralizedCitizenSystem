@@ -27,7 +27,7 @@ public class Citizen {
         this.password = password;
     }
 
-    boolean validatePassword(String password){
+    public boolean validatePassword(String password){
         return Objects.equals(this.password, password);
     }
 
