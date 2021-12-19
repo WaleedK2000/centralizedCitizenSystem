@@ -3,6 +3,7 @@ package citizen.central.citizensys.cnic;
 import citizen.central.citizensys.Citizen_Controller;
 import citizen.central.citizensys.appointment.UIAppointment;
 import citizen.central.citizensys.payment.UIPayment;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -125,8 +126,12 @@ public class UINewcnic {
 
         citizen_controller.do_booking_confirmation();
 
+    }
 
-
+    @FXML
+    void closeWindow(ActionEvent event) {
+        Stage stage= (Stage) payLabel.getScene().getWindow();
+        stage.close();
     }
 
 }

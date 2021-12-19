@@ -147,7 +147,7 @@
                 </HBox>
                 <AnchorPane prefHeight="79.0" prefWidth="624.0">
                     <children>
-                        <Button layoutX="436.0" layoutY="3.0" mnemonicParsing="false" styleClass="btnTwo" text="Done" />
+                        <Button layoutX="436.0" layoutY="3.0" mnemonicParsing="false" onAction="#closeWindow" styleClass="btnTwo" text="Done" />
                     </children>
                 </AnchorPane>
             </children>

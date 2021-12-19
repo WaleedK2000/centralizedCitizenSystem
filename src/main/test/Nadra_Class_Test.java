@@ -1,4 +1,4 @@
-import citizen.central.citizensys.Citizen;
+/*import citizen.central.citizensys.Citizen;
 import gov.nadra.DBNadra;
 import gov.nadra.Nadra_Record;
 import org.junit.Before;
@@ -33,3 +33,4 @@ public class Nadra_Class_Test {
 
 
 }
+*/

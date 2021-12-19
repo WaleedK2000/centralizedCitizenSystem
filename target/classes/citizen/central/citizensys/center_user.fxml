@@ -3,11 +3,11 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="citizen.central.citizensys.UICenterUser">
    <children>
-      <Button layoutX="238.0" layoutY="94.0" mnemonicParsing="false" onAction="#appointmentNewCnc" text="Apply For New CNIC" />
-      <Button layoutX="238.0" layoutY="142.0" mnemonicParsing="false" onAction="#renew_cnic" prefHeight="25.0" prefWidth="125.0" text="Renew CNIC" />
-      <Button layoutX="238.0" layoutY="188.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" text="use case 3" />
+      <Button layoutX="167.0" layoutY="143.0" mnemonicParsing="false" onAction="#appointmentNewCnc" prefHeight="25.0" prefWidth="267.0" text="Apply For New CNIC" />
+      <Button layoutX="167.0" layoutY="188.0" mnemonicParsing="false" onAction="#renew_cnic" prefHeight="25.0" prefWidth="267.0" text="Renew CNIC" />
+      <Button layoutX="167.0" layoutY="276.0" mnemonicParsing="false" onAction="#appointmentNewCRC" prefHeight="25.0" prefWidth="267.0" text="Apply for new JV" />
+      <Button layoutX="167.0" layoutY="236.0" mnemonicParsing="false" onAction="#appointmentNewJVCard" prefHeight="25.0" prefWidth="267.0" text="Apply for Child Registration Certificate" />
    </children>
 </AnchorPane>

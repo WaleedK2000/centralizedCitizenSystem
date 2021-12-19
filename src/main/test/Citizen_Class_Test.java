@@ -1,3 +1,5 @@
+/*
+
 import citizen.central.citizensys.Citizen;
 import citizen.central.db.DbCitizen;
 import org.junit.Before;
@@ -35,3 +37,4 @@ public class Citizen_Class_Test {
 
 
 }
+*/
