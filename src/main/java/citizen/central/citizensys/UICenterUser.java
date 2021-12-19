@@ -1,6 +1,7 @@
 package citizen.central.citizensys;
 
 import citizen.central.citizensys.cnic.UINewcnic;
+import citizen.central.citizensys.cnic.UIRenewcnic;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,7 +33,7 @@ public class UICenterUser {
     }
 
     @FXML
-    void renew_cnic(ActionEvent event) {
-
+    void renew_cnic(ActionEvent event) throws IOException {
+        UIRenewcnic.launch();
     }
 }

@@ -1,5 +1,8 @@
 package gov.nadra;
 
+import javafx.util.converter.LocalDateStringConverter;
+
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -14,6 +17,20 @@ public class Nadra {
 
     public boolean checkValidCnic(){
         return true;
+    }
+
+    public Date getExpiryDate(){
+        return record_database.getCnicExpiry(cnic);
+    }
+
+    public Nadra_Record get_info(){
+        List<Nadra_Record> list = record_database.getRecord(cnic);
+        if(list.isEmpty()){
+            return null;
+        }
+        else{
+            return list.get(0);
+        }
     }
 
     public int getAge(){

@@ -17,6 +17,13 @@ public class UIPayment {
     @FXML
     private Label total;
 
+    @FXML
+    private Label cardnum;
+
+    public String getCardDet(){
+        return cardnum.toString();
+    }
+
     public static URL getResource() {
         return UIPayment.class.getResource("payment.fxml");
     }

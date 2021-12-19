@@ -7,6 +7,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class DBNadra {
@@ -45,8 +47,14 @@ public class DBNadra {
     }
 
     public List<Nadra_Record> getRecord(String cnic){
-        String query = "SELECT id FROM nadra WHERE cnic = " + cnic;
+        String query = "SELECT * FROM nadra WHERE cnic = " + cnic;
+
+
+
         return session.createNativeQuery(query,Nadra_Record.class).list();
     }
 
+    public Date getCnicExpiry(String cnic) {
+        return new Date(2019, Calendar.SEPTEMBER,2021);
+    }
 }

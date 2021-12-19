@@ -33,7 +33,7 @@ public class Nadra_Record {
     private char gender;
 
     public Nadra_Record(Long id, String cnic, String first_name, String last_name, String father_cnic, String mother_cnic, Date date_Of_birth, char gender) {
-        this.id = id;
+        //this.id = id;
         this.cnic = cnic;
         this.first_name = first_name;
         this.last_name = last_name;
