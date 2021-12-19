@@ -33,47 +33,17 @@ public class UIRenewDrivingLicense implements Initializable {
 
     private Citizen_info citizen_info;
 
-    private String cnic = "147";
+    private  String cnic;
 
-    @FXML
-    void payment(MouseEvent event) throws IOException {
-
-        paymentLabel.setDisable(true);
-        UIPayment.launchPayment();
-        paymentLabel.setText("Payment Complete");
-        iconOne.setIconLiteral("ci-checkmark");
-
-        if(!citizen_info.requestRenewalDriving(cnic)){
-            deliveryMsg.setText("Request Failed. Please visit traffic office.");
-        }
-
-        deliveryMsg.setVisible(true);
+    public void setCnic(String cnic) {
+        this.cnic = cnic;
     }
 
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        citizen_info = new Citizen_info();
-        boolean valid = citizen_info.renew_driving_license();
-
-        if (!valid){
-            validmsg.setText("Request Invalid");
-            paymentLabel.setDisable(true);
-        }
-
-    }
-
-    @FXML
-    void closeWindow(ActionEvent event) {
-        Stage stage= (Stage) validmsg.getScene().getWindow();
-        stage.close();
-    }
-
-    public static void launch() throws IOException {
+    public static void launch(String cnic) throws IOException {
         FXMLLoader loader = new FXMLLoader(UIRenewDrivingLicense.getResource());
         Parent root = loader.load();
         UIRenewDrivingLicense ui_class = loader.getController();
-
+        ui_class.setCnic(cnic);
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.setTitle("RENEW");
@@ -83,6 +53,39 @@ public class UIRenewDrivingLicense implements Initializable {
 
     private static URL getResource() {
         return UINewjv.class.getResource("renewdrivinglicense.fxml");
+    }
+
+    @FXML
+    void payment(MouseEvent event) throws IOException {
+
+        paymentLabel.setDisable(true);
+        UIPayment.launchPayment();
+        paymentLabel.setText("Payment Complete");
+        iconOne.setIconLiteral("ci-checkmark");
+
+        if (!citizen_info.requestRenewalDriving(cnic)) {
+            deliveryMsg.setText("Request Failed. Please visit traffic office.");
+        }
+
+        deliveryMsg.setVisible(true);
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        citizen_info = new Citizen_info();
+        boolean valid = citizen_info.renew_driving_license();
+
+        if (!valid) {
+            validmsg.setText("Request Invalid");
+            paymentLabel.setDisable(true);
+        }
+
+    }
+
+    @FXML
+    void closeWindow(ActionEvent event) {
+        Stage stage = (Stage) validmsg.getScene().getWindow();
+        stage.close();
     }
 
 

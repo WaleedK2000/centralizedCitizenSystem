@@ -46,7 +46,27 @@ public class UINewjv implements Initializable {
 
     private Citizen_info citizen_info;
 
-    private String cnic = "147";
+    public void setCnic(String cnic) {
+        this.cnic = cnic;
+    }
+
+    private  String cnic;
+
+    public static void launch(String cnic) throws IOException {
+        FXMLLoader loader = new FXMLLoader(UINewjv.getResource());
+        Parent root = loader.load();
+        UINewjv ui_class = loader.getController();
+        ui_class.setCnic(cnic);
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("New JV");
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.showAndWait();
+    }
+
+    private static URL getResource() {
+        return UINewjv.class.getResource("newjv.fxml");
+    }
 
     @FXML
     void appointment(MouseEvent event) throws IOException {
@@ -66,13 +86,13 @@ public class UINewjv implements Initializable {
         iconOne.setIconLiteral("ci-checkmark");
         appointmentLabel.setText(appointment.getDateTime());
 
-        System.out.println( "Time is: " + appointment.getDateTime());
+        System.out.println("Time is: " + appointment.getDateTime());
     }
 
     @FXML
     void genToken(MouseEvent event) {
         tok = 1245;
-        tokenLabel.setText("Your Token " + tok );
+        tokenLabel.setText("Your Token " + tok);
         iconThree.setIconLiteral("ci-checkmark");
     }
 
@@ -99,17 +119,16 @@ public class UINewjv implements Initializable {
         int valid = citizen_info.appointmentNewJVCard(cnic);
 
 
-        if(valid == -1){
+        if (valid == -1) {
             validMsg.setText("JV Request Not Valid");
             disableAll();
-        }
-        else if (valid == -2){
+        } else if (valid == -2) {
             validMsg.setText("Age Greater than 18");
             disableAll();
         }
     }
 
-    private void disableAll(){
+    private void disableAll() {
         tokenLabel.setDisable(true);
         appointmentLabel.setDisable(true);
         payLabel.setDisable(true);
@@ -118,24 +137,8 @@ public class UINewjv implements Initializable {
 
     @FXML
     void closeWindow(ActionEvent event) {
-        Stage stage= (Stage) payLabel.getScene().getWindow();
+        Stage stage = (Stage) payLabel.getScene().getWindow();
         stage.close();
-    }
-
-    public static void launch() throws IOException {
-        FXMLLoader loader = new FXMLLoader(UINewjv.getResource());
-        Parent root = loader.load();
-        UINewjv ui_class = loader.getController();
-
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.setTitle("New JV");
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.showAndWait();
-    }
-
-    private static URL getResource() {
-        return UINewjv.class.getResource("newjv.fxml");
     }
 
 }

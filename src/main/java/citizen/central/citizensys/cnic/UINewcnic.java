@@ -20,63 +20,50 @@ import java.sql.SQLException;
 
 public class UINewcnic {
 
+    Citizen_info citizen_info;
     @FXML
     private FontIcon iconOne;
-
     @FXML
     private FontIcon iconTwo;
-
     @FXML
     private FontIcon iconThree;
-
-
     @FXML
     private Label appointmentLabel;
-
     @FXML
     private Label payLabel;
     @FXML
     private Label tokenLabel;
-
     @FXML
     private Label valid_msg;
-
     private String tok;
-
     private String cnic;
 
-    Citizen_info citizen_info;
-
-    public void newCnic(String cnic){
-        this.cnic = cnic;
-        int cond = citizen_info.appointmentNewCNic(cnic);
-        if(cond == -2){
-            valid_msg.setText("You are under 18. Consider making JV instead");
-        }
-        else if (cond == -1){
-            valid_msg.setText("You already have a cnic");
-        }
-    }
-
-    public UINewcnic(){
+    public UINewcnic() {
         citizen_info = new Citizen_info();
     }
-
-
-    public void setCnic(String cnic) {
-        this.cnic = cnic;
-    }
-
-
 
     public static URL getResource() {
         return UINewcnic.class.getResource("newcnic.fxml");
     }
 
+    public void newCnic(String cnic) {
+        this.cnic = cnic;
+        int cond = citizen_info.appointmentNewCNic(cnic);
+        if (cond == -2) {
+            valid_msg.setText("You are under 18. Consider making JV instead");
+        } else if (cond == -1) {
+            valid_msg.setText("You already have a cnic");
+        }
+    }
+
+    public void setCnic(String cnic) {
+        this.cnic = cnic;
+    }
+
     @FXML
     void genToken(MouseEvent event) {
         tok = citizen_info.generateToken();
-        tokenLabel.setText("Your Token " + tok );
+        tokenLabel.setText("Your Token " + tok);
         iconThree.setIconLiteral("ci-checkmark");
     }
 
@@ -98,12 +85,11 @@ public class UINewcnic {
         stage.showAndWait();
 
 
-
         iconOne.setIconLiteral("ci-checkmark");
         appointmentLabel.setText(appointment.getDateTime());
 
-        System.out.println( "Time is: " + appointment.getDateTime());
-        citizen_info.book_slot(appointment.getDate(),appointment.getSlot().getValue(),cnic);
+        System.out.println("Time is: " + appointment.getDateTime());
+        citizen_info.book_slot(appointment.getDate(), appointment.getSlot().getValue(), cnic);
 
 
     }
@@ -130,7 +116,7 @@ public class UINewcnic {
 
     @FXML
     void closeWindow(ActionEvent event) {
-        Stage stage= (Stage) payLabel.getScene().getWindow();
+        Stage stage = (Stage) payLabel.getScene().getWindow();
         stage.close();
     }
 

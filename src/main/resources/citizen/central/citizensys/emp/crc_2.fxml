@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox prefHeight="472.0" prefWidth="977.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<HBox prefHeight="472.0" prefWidth="1146.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <VBox prefHeight="472.0" prefWidth="472.0" styleClass="whitetitle" stylesheets="@css/main.css">
             <children>
@@ -45,20 +45,23 @@
                 </AnchorPane>
             </children>
         </VBox>
-        <VBox prefHeight="472.0" prefWidth="506.0" stylesheets="@css/main.css">
-            <children>
-                <AnchorPane prefHeight="479.0" prefWidth="488.0" styleClass="back" stylesheets="@css/main.css">
-                    <children>
-                        <Button layoutX="165.0" layoutY="317.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="145.0" styleClass="simplebtnTwo" text="Proceed" />
-                        <TextField layoutX="110.0" layoutY="243.0" prefHeight="34.0" prefWidth="269.0" />
-                        <Label layoutX="45.0" layoutY="177.0" prefHeight="40.0" prefWidth="399.0" styleClass="whitetitle" text="Guardian CNIC Number">
-                            <font>
-                                <Font size="16.0" />
-                            </font>
-                        </Label>
-                    </children>
-                </AnchorPane>
-            </children>
-        </VBox>
+        <VBox prefHeight="472.0" prefWidth="0.0" stylesheets="@css/main.css" />
+          <AnchorPane prefHeight="472.0" prefWidth="704.0" styleClass="back" stylesheets="@css/main.css">
+              <children>
+                  <Button layoutX="165.0" layoutY="317.0" mnemonicParsing="false" onAction="#proceed" prefHeight="34.0" prefWidth="145.0" styleClass="simplebtnTwo" text="Proceed" />
+                  <TextField fx:id="cnic" layoutX="110.0" layoutY="243.0" prefHeight="34.0" prefWidth="269.0" />
+                  <Label layoutX="45.0" layoutY="177.0" prefHeight="40.0" prefWidth="399.0" styleClass="whitetitle" text="Guardian CNIC Number">
+                      <font>
+                          <Font size="16.0" />
+                      </font>
+                  </Label>
+            <Label layoutX="24.0" layoutY="68.0" prefHeight="40.0" prefWidth="609.0" styleClass="whitetitle" text=" Child's Birth Certificate Number">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="cert" layoutX="103.0" layoutY="126.0" prefHeight="34.0" prefWidth="269.0" />
+              </children>
+          </AnchorPane>
     </children>
 </HBox>

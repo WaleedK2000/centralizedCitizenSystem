@@ -1,7 +1,6 @@
 package gov.UnionCouncil;
 
 import citizen.central.db.Dbcon;
-import gov.UnionCouncil.UC_Record;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -17,7 +16,7 @@ public class DBUnionCouncil {
     private final Transaction trans;
 
 
-    public DBUnionCouncil(){
+    public DBUnionCouncil() {
         con = Dbcon.getDbCon();
         con.configure().addAnnotatedClass(UC_Record.class);
         sf = con.buildSessionFactory();
@@ -25,13 +24,12 @@ public class DBUnionCouncil {
         trans = session.beginTransaction();
     }
 
-    public boolean addRecord(UC_Record record){
+    public boolean addRecord(UC_Record record) {
 
-        if(exists(record.getBcertificate_No())){
+        if (exists(record.getBcertificate_No())) {
             System.out.println("Already Exists");
             return false;
-        }
-        else {
+        } else {
             session.save(record);
             trans.commit();
             return true;
@@ -39,20 +37,17 @@ public class DBUnionCouncil {
 
     }
 
-    public boolean exists(String bcertertificate_no){
+    public boolean exists(String bcertertificate_no) {
         List<UC_Record> list = getRecord(bcertertificate_no);
         return !list.isEmpty();
     }
 
-    public List<UC_Record> getRecord(String bcertertificate_no){
+    public List<UC_Record> getRecord(String bcertertificate_no) {
         String query = "SELECT * FROM union_council  WHERE cnic = " + bcertertificate_no;
 
 
-
-        return session.createNativeQuery(query,UC_Record.class).list();
+        return session.createNativeQuery(query, UC_Record.class).list();
     }
-
-
 
 
 }

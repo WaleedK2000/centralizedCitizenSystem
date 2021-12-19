@@ -23,12 +23,25 @@ public class UIPayment {
 
     private Citizen_info citizen_info;
 
-    public String getCardDet(){
-        return cardnum.toString();
-    }
-
     public static URL getResource() {
         return UIPayment.class.getResource("payment.fxml");
+    }
+
+    public static void launchPayment() throws IOException {
+        FXMLLoader loader = new FXMLLoader(UIPayment.getResource());
+        Parent root = loader.load();
+        UIPayment appointment = loader.getController();
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Payment");
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setResizable(false);
+        stage.showAndWait();
+    }
+
+    public String getCardDet() {
+        return cardnum.toString();
     }
 
     @FXML
@@ -49,26 +62,10 @@ public class UIPayment {
     void payment(ActionEvent event) {
         citizen_info = new Citizen_info();
         citizen_info.do_payment(1800, cardnum.getText());
-        Stage stage= (Stage) total.getScene().getWindow();
+        Stage stage = (Stage) total.getScene().getWindow();
 
         stage.close();
     }
-
-    public static void launchPayment() throws IOException {
-        FXMLLoader loader = new FXMLLoader(UIPayment.getResource());
-        Parent root = loader.load();
-        UIPayment appointment = loader.getController();
-
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.setTitle("Payment");
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setResizable(false);
-        stage.showAndWait();
-    }
-
-
-
 
 
 }

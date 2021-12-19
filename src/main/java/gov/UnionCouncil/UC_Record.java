@@ -6,8 +6,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "Union_Council")
-public class UC_Record
-{
+public class UC_Record {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

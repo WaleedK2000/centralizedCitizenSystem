@@ -31,6 +31,7 @@ module citizen.central.citizensys {
     exports citizen.central.citizensys.cnic;
     exports citizen.central.db;
     exports gov.nadra;
+    exports gov.DGIP;
 
 
 }

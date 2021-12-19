@@ -1,9 +1,5 @@
 package citizen.central.citizensys;
 
-import citizen.central.citizensys.login.DBLogin;
-import gov.nadra.DBNadra;
-import gov.nadra.Nadra;
-import gov.nadra.Nadra_Record;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -11,8 +7,6 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Calendar;
-import java.util.Date;
 
 public class HelloApplication extends Application {
     public static void main(String[] args) {

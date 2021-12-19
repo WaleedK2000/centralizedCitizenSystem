@@ -1,15 +1,14 @@
 package citizen.central.citizensys.Passport;
 
 public class Passport {
+    private final String age;
+    private final String name;
     private int pass_no;
-    private String age;
 
-    private String name;
-public Passport(String name,String age)
-{
-    this.name=name;
-    this.age=age;
+    public Passport(String name, String age) {
+        this.name = name;
+        this.age = age;
 
-}
+    }
 
 }
